@@ -1,0 +1,68 @@
+.rootContainer {
+  display: flex;
+  flex-direction: row;
+
+  position: fixed;
+  margin:0;
+
+  top:0;
+  left:0;
+
+  width: 100%;
+  height: 100%;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.selectionContainer {
+  display: flex;
+  flex-direction: column;
+  margin-inline: 10px;
+  width: 40%;
+  height: 80%;
+  border: 3px solid black;
+  border-radius: 5px;
+}
+
+.unitContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.unitItem {
+  display: flex;
+  margin-inline: 3px;
+  width: 60px;
+  height: 60px;
+  border: 3px solid rgb(211, 211, 211);
+  border-radius: 5px;
+}
+
+.displayContainer {
+  display: flex;
+  width: 40%;
+  height: 80%;
+
+  border: 3px solid black;
+  border-radius: 5px;
+
+  flex-direction: column;
+}
+
+.graphContainer {
+  display: flex;
+  width: 100%;
+  height: 50%;
+  background-color: antiquewhite;
+}
+
+
+.statContainer {
+  display: flex;
+  width: 100%;
+  height: 50%;
+  background-color: aliceblue;
+}
