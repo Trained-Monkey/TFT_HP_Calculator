@@ -1,7 +1,12 @@
 <div class="rootContainer">
   <div class="selectionContainer">
     <div class="unitContainer">
-      <div class="unitItem">Unit</div>
+      <div class="unitItem">Unit
+        <div class="unitItemContent">
+          <div *ngFor="let i of items | async" class="unitItemOption">Kai'sa</div>
+        </div>
+      </div>
+
       <div class="unitItem">Item</div>
       <div class="unitItem">Item</div>
       <div class="unitItem">Item</div>
@@ -14,7 +19,7 @@
   </div>
   <div class="displayContainer">
     <div class="graphContainer">
-      <div echarts [options]="options" class="graphItem"> </div>
+      <div echarts [options]="options" [merge]="mergeOption" class="graphItem"> </div>
     </div>
     <div class="statContainer">
       Stats

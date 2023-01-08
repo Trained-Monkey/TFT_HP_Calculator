@@ -1,5 +1,7 @@
 import { Component, NgModule } from '@angular/core';
 import { MockServerService } from '../mock-server.service';
+import { ItemDataService } from '../common/services/itemData.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-calculator',
@@ -9,7 +11,6 @@ import { MockServerService } from '../mock-server.service';
 
 export class CalculatorComponent {
   options = {
-
     xAxis: {
       name: 'x',
       minorTick: {
@@ -54,33 +55,42 @@ export class CalculatorComponent {
     ],
   };
 
+  stats = [0, 40, 50]
+
   mergeOption: any;
   loading = false;
 
-  constructor(private api: MockServerService) {}
+  items: Observable<any[]>;
 
-  getData() {
-    this.loading = true;
-    this.api
-      .getData()
-      .then((data) => {
-        this.mergeOption = { series: [{ data }] };
-      })
-      .catch((e) => {
-        /** Error Handler */
-      })
-      .then(() => {
-        this.loading = false;
-      });
+  // Inject champion and item service list through constructor
+  constructor(private itemDataService: ItemDataService) {
+    this.items = this.itemDataService.item;
+    console.log(this.items)
   }
 
-  generateData(modifier: number) {
+  // Called everytime this.stats is changed
+  updateData() {
+    var updatedData = [];
+
+    // Convert stats into effective HP data and format it for echarts
+    updatedData = this.stats.map((x) => ({['data']: this.generateData(x)}));
+
+    this.mergeOption = {series: updatedData}
+  }
+
+  // timer = setInterval(() => {this.updateData()}, 1000);
+
+  // ngOnDestroy(){
+  //   clearInterval(this.timer);
+  // }
+
+  // Generates data to show graphically, modifier represents the armor/mr stat
+  generateData(modifier: number) : number[] {
     var data = [];
     for (var i: number = 0; i < 2000; i+=10){
-      var result = [i, i + i * modifier / 100];
-      data.push(result);
+      data.push([i, i + i * modifier / 100]);
     }
-    console.log(data);
+
     return data;
   }
 }
