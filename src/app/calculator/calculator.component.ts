@@ -1,7 +1,8 @@
 import { Component, NgModule } from '@angular/core';
-import { MockServerService } from '../mock-server.service';
 import { ItemDataService } from '../common/services/itemData.service';
+import { ChampionDataService } from '../common/services/championData.service';
 import { Observable } from 'rxjs';
+import { Champion, Item } from '../common/interfaces/interfaces';
 
 @Component({
   selector: 'app-calculator',
@@ -60,12 +61,15 @@ export class CalculatorComponent {
   mergeOption: any;
   loading = false;
 
-  items: Observable<any[]>;
+  items: Observable<Item[]>;
+  champions: Observable<Champion[]>;
+  championImagePath: string;
+  itemImagePaths: string[];
 
   // Inject champion and item service list through constructor
-  constructor(private itemDataService: ItemDataService) {
+  constructor(private itemDataService: ItemDataService, private championDataService: ChampionDataService) {
     this.items = this.itemDataService.item;
-    console.log(this.items)
+    this.champions = this.championDataService.champion;
   }
 
   // Called everytime this.stats is changed
@@ -78,12 +82,6 @@ export class CalculatorComponent {
     this.mergeOption = {series: updatedData}
   }
 
-  // timer = setInterval(() => {this.updateData()}, 1000);
-
-  // ngOnDestroy(){
-  //   clearInterval(this.timer);
-  // }
-
   // Generates data to show graphically, modifier represents the armor/mr stat
   generateData(modifier: number) : number[] {
     var data = [];
@@ -92,5 +90,10 @@ export class CalculatorComponent {
     }
 
     return data;
+  }
+
+  selectChampion(champion: Champion): void {
+    this.championImagePath = "assets/images/" + champion.image;
+    // Set stats as well
   }
 }

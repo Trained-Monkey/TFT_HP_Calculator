@@ -1,15 +1,41 @@
 <div class="rootContainer">
   <div class="selectionContainer">
     <div class="unitContainer">
-      <div class="unitItem">Unit
+      <div class="unitItem">
+        <img [src]="championImagePath">
+
         <div class="unitItemContent">
-          <div *ngFor="let i of items | async" class="unitItemOption">Kai'sa</div>
+          <div *ngFor="let c of champions | async" class="unitItemOption" (click)="selectChampion(c)">
+            <img [src]="'assets/images/' + c.image" onerror="this.onerror=null; this.remove();">
+            <p> {{c.name}} </p>
+          </div>
         </div>
       </div>
 
-      <div class="unitItem">Item</div>
-      <div class="unitItem">Item</div>
-      <div class="unitItem">Item</div>
+      <div class="unitItem">
+        <div class="unitItemContent">
+          <div *ngFor="let i of items | async" class="unitItemOption">
+            {{i.name}}
+          </div>
+        </div>
+      </div>
+
+      <div class="unitItem">
+        <div class="unitItemContent">
+          <div *ngFor="let i of items | async" class="unitItemOption">
+            {{i.name}}
+          </div>
+        </div>
+      </div>
+
+      <div class="unitItem">
+        <div class="unitItemContent">
+          <div *ngFor="let i of items | async" class="unitItemOption">
+            {{i.name}}
+          </div>
+        </div>
+      </div>
+
     </div>
     <div class="modifierContainer">
       <div class="modifier"> Star Level: 1, 2, 3</div>
@@ -23,6 +49,12 @@
     </div>
     <div class="statContainer">
       Stats
+      <div>Health</div>
+      <div>Armour</div>
+      <div>Magic Resist</div>
+      <div>EHP growth per armour increase</div>
+      <div>EHP growth per magic resist increase</div>
+      <div>EHP growth per health increase</div>
     </div>
   </div>
 </div>
