@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
+import { Observable, Subject, filter, share } from "rxjs";
 import { HttpClient } from "@angular/common/http";
-import { find, map, shareReplay, tap } from "rxjs";
+import { of, find, map, shareReplay, tap } from "rxjs";
 import { Champion } from "../interfaces/interfaces";
 
 @Injectable({
@@ -10,44 +10,24 @@ import { Champion } from "../interfaces/interfaces";
 
 export class ChampionDataService {
   champion: Observable<Champion[]>;
+  filteredChampion: Observable<Champion[]>;
+
+  coutner: number;
+  test = new Subject();
 
   constructor(private http: HttpClient) {
     this.champion = this.http.get<Champion[]>('/api/champions.json').pipe(
       // Replay data onto new subscribers
       shareReplay(1)
     );
+    this.filteredChampion = this.champion;
   }
 
-  // Made redundant after just passing in champion class from document to component
-  // Left in case of future use
-  getChampionImagePath(championName: string): string {
-    var selectedChampion:Champion = null;
-
-    // Pipe does not run without a subscriber
-    this.champion.pipe(
-      tap((champions: Champion[]) => {
-        selectedChampion = champions.find(x => x.name == championName);
-      })
-      // Surely theres a better way than having to run subscribe()?
-    ).subscribe(() => {})
-
-    if (selectedChampion != null)
-    {
-      return selectedChampion.image;
-    }
-    return "";
-  }
-
-  getChampionHealth(){
-
-  }
-
-  getChampionArmour(){
-
-  }
-
-  getChampionMagicResist(){
-
+  searchChampions(query) {
+    return this.champion.pipe(
+      map(champ => champ.filter(champ => champ.name.toLowerCase().indexOf(query.toLowerCase()) === 0)),
+      shareReplay(1)
+    )
   }
 }
 

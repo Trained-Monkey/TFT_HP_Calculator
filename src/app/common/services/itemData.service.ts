@@ -14,7 +14,6 @@ export class ItemDataService {
 
   constructor(private http: HttpClient) {
     this.item = this.http.get<Item[]>('/api/items.json').pipe(
-      // Replay data onto new subscribers
       shareReplay(1)
     );
   }

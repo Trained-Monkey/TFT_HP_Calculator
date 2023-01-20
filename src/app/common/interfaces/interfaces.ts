@@ -15,3 +15,9 @@ export interface Item {
   armour: number;
   magicResist: number;
 }
+
+export interface Stats {
+  health: number;
+  armour: number;
+  magicResist: number;
+}

@@ -5,7 +5,9 @@
         <img [src]="championImagePath">
 
         <div class="unitItemContent">
-          <div *ngFor="let c of champions | async" class="unitItemOption" (click)="selectChampion(c)">
+          <input type="text" [(ngModel)]="searchString" id="myInput" (keyup)="searchChampions()" placeholder="Search for names..">
+
+          <div *ngFor="let c of filteredChampions | async" class="unitItemOption" (click)="selectChampion(c)">
             <img [src]="'assets/images/' + c.image" onerror="this.onerror=null; this.remove();">
             <p> {{c.name}} </p>
           </div>
@@ -47,15 +49,15 @@
     <div class="graphContainer">
       <div echarts [options]="options" [merge]="mergeOption" class="graphItem"> </div>
     </div>
-    <div class="statContainer">
-      Stats
-      <div>Health</div>
-      <div>Armour</div>
-      <div>Magic Resist</div>
-      <div>EHP growth per armour increase</div>
-      <div>EHP growth per magic resist increase</div>
-      <div>EHP growth per health increase</div>
+    <div class="statContainer" *ngIf="selectedChampion">
+        <div class="statItem">Health: {{selectedChampion.health}} </div>
+        <div class="statItem"></div>
+        <div class="statItem">Armour:  {{selectedChampion.armour}} </div>
+        <div class="statItem">Magic Resist:  {{selectedChampion.magicResist}} </div>
+        <div class="statItem">EHP growth per armour increase: </div>
+        <div class="statItem">EHP growth per magic resist increase: </div>
+        <div class="statItem">EHP armour growth per health increase: </div>
+        <div class="statItem">EHP magic resist growth per health increase: </div>
     </div>
   </div>
 </div>
-

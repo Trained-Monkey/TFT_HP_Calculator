@@ -1,8 +1,9 @@
 import { Component, NgModule } from '@angular/core';
 import { ItemDataService } from '../common/services/itemData.service';
 import { ChampionDataService } from '../common/services/championData.service';
-import { Observable } from 'rxjs';
-import { Champion, Item } from '../common/interfaces/interfaces';
+import { GraphGeneratorService } from '../common/services/graphGenerator.service';
+import { Observable, filter, map, reduce, tap } from 'rxjs';
+import { Champion, Item, Stats } from '../common/interfaces/interfaces';
 
 @Component({
   selector: 'app-calculator',
@@ -11,89 +12,63 @@ import { Champion, Item } from '../common/interfaces/interfaces';
 })
 
 export class CalculatorComponent {
-  options = {
-    xAxis: {
-      name: 'x',
-      minorTick: {
-        show: true
-      },
-      minorSplitLine: {
-        show: true
-      },
-    },
-
-    yAxis: {
-      type: 'value',
-      name: 'Effective HP',
-      min: 0,
-      minorTick: {
-        show: true
-      },
-      minorSplitLine: {
-        show: true
-      }
-    },
-
-    series: [
-      {
-        data: this.generateData(40),
-        showSymbol: false,
-        clip: true,
-        type: 'line'
-      },
-      {
-        data: this.generateData(10),
-        showSymbol: false,
-        clip: true,
-        type: 'line'
-      },
-      {
-        data: this.generateData(0),
-        showSymbol: false,
-        clip: true,
-        type: 'line'
-      },
-    ],
-  };
-
-  stats = [0, 40, 50]
-
+  // Graphs
+  options: any;
   mergeOption: any;
-  loading = false;
+  loading: any;
 
+  // Stats
   items: Observable<Item[]>;
   champions: Observable<Champion[]>;
+
   championImagePath: string;
   itemImagePaths: string[];
 
+  selectedChampion: Champion;
+
+  filteredChampions: Observable<Champion[]>;
+  searchString: string = "";
+
+  stats: Stats;
+
   // Inject champion and item service list through constructor
-  constructor(private itemDataService: ItemDataService, private championDataService: ChampionDataService) {
+  constructor(private itemDataService: ItemDataService,
+              private championDataService: ChampionDataService,
+              private graphGeneratorService: GraphGeneratorService) {
     this.items = this.itemDataService.item;
     this.champions = this.championDataService.champion;
-  }
+    this.filteredChampions = this.championDataService.filteredChampion;
 
-  // Called everytime this.stats is changed
-  updateData() {
-    var updatedData = [];
+    this.options = graphGeneratorService.options;
+    this.mergeOption = graphGeneratorService.mergeOption;
+    this.loading = graphGeneratorService.loading;
 
-    // Convert stats into effective HP data and format it for echarts
-    updatedData = this.stats.map((x) => ({['data']: this.generateData(x)}));
-
-    this.mergeOption = {series: updatedData}
-  }
-
-  // Generates data to show graphically, modifier represents the armor/mr stat
-  generateData(modifier: number) : number[] {
-    var data = [];
-    for (var i: number = 0; i < 2000; i+=10){
-      data.push([i, i + i * modifier / 100]);
+    this.stats = {
+      health: 0,
+      armour: 0,
+      magicResist: 0
     }
-
-    return data;
   }
 
   selectChampion(champion: Champion): void {
+    // Updated our this.stats
+    this.stats.health = champion.health;
+    this.stats.armour = champion.armour;
+    this.stats.magicResist = champion.magicResist;
+
+    this.selectedChampion = champion;
     this.championImagePath = "assets/images/" + champion.image;
-    // Set stats as well
+
+    // Set and get stats and pass into the graph generator to update our graph
+    this.graphGeneratorService.updateData(this.stats);
+    this.mergeOption = this.graphGeneratorService.mergeOption;
+  }
+
+  selectItem(item: Item, slot: Number) : void {
+
+  }
+
+  searchChampions(): void {
+    this.filteredChampions = this.championDataService.searchChampions(this.searchString);
   }
 }
