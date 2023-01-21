@@ -1,8 +1,8 @@
 [
   {
-    "name": "Bramble", "health": "750", "image": "Bramble.png"
+    "name": "Bramble", "health": 0,"armour": 80, "magicResist": 0, "image": "Bramble.png"
   },
   {
-    "name": "Dclaw", "health": "750", "image": "DClaw.png"
+    "name": "Dclaw", "health": 0, "armour": 0, "magicResist": 70, "image": "DClaw.png"
   }
 ]

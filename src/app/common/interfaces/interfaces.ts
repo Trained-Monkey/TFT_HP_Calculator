@@ -5,6 +5,8 @@ export interface Champion {
   health: number;
   armour: number;
   magicResist: number;
+
+  class: Class;
 }
 
 export interface Item {
@@ -21,3 +23,12 @@ export interface Stats {
   armour: number;
   magicResist: number;
 }
+
+export enum Class {
+  Sureshot,
+  Defender,
+  Brawler,
+  Aegis,
+  Prankster,
+}
+

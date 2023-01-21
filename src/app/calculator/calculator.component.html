@@ -14,35 +14,42 @@
         </div>
       </div>
 
-      <div class="unitItem">
+      <div class="unitItem" *ngFor="let a of [0, 1, 2]">
         <div class="unitItemContent">
-          <div *ngFor="let i of items | async" class="unitItemOption">
-            {{i.name}}
-          </div>
-        </div>
-      </div>
-
-      <div class="unitItem">
-        <div class="unitItemContent">
-          <div *ngFor="let i of items | async" class="unitItemOption">
-            {{i.name}}
-          </div>
-        </div>
-      </div>
-
-      <div class="unitItem">
-        <div class="unitItemContent">
-          <div *ngFor="let i of items | async" class="unitItemOption">
-            {{i.name}}
+          <div *ngFor="let i of items | async" class="unitItemOption" (click)="selectItem(i, a)">
+            <img [src]="'assets/images/' + i.image" onerror="this.onerror=null; this.remove();">
+            <p> {{i.name}} </p>
           </div>
         </div>
       </div>
 
     </div>
     <div class="modifierContainer">
-      <div class="modifier"> Star Level: 1, 2, 3</div>
-      <div class="modifier"> Defender: 2, 4, 6, 8</div>
-      <div class="modifier"> Aegis: 2, 3, 4, 5</div>
+      <!-- Remove repetition through ngFor? -->
+      <div class="modifier">
+        Star level:
+        <div *ngFor="let level of [1, 2, 3]">
+          <label for="'level' + level">{{level}}</label>
+          <input  type="radio" name="star" id="'level'+level" checked="true">
+        </div>
+      </div>
+
+      <div class="modifier">
+        Defender:
+        <div *ngFor="let level of [0, 2, 4, 6, 8]">
+          <label for="'level' + level">{{level}}</label>
+          <input  type="radio" name="defender" id="'level'+level" checked="true">
+        </div>
+      </div>
+
+      <div class="modifier">
+        Aegis:
+        <div *ngFor="let level of [0, 2, 3, 4, 5]">
+          <label for="'level' + level">{{level}}</label>
+          <input  type="radio" name="aegis" id="'level'+level" checked="true">
+        </div>
+      </div>
+
     </div>
   </div>
   <div class="displayContainer">
@@ -50,10 +57,10 @@
       <div echarts [options]="options" [merge]="mergeOption" class="graphItem"> </div>
     </div>
     <div class="statContainer" *ngIf="selectedChampion">
-        <div class="statItem">Health: {{selectedChampion.health}} </div>
+        <div class="statItem">Health: {{stats.health}} </div>
         <div class="statItem"></div>
-        <div class="statItem">Armour:  {{selectedChampion.armour}} </div>
-        <div class="statItem">Magic Resist:  {{selectedChampion.magicResist}} </div>
+        <div class="statItem">Armour:  {{stats.armour}} </div>
+        <div class="statItem">Magic Resist:  {{stats.magicResist}} </div>
         <div class="statItem">EHP growth per armour increase: </div>
         <div class="statItem">EHP growth per magic resist increase: </div>
         <div class="statItem">EHP armour growth per health increase: </div>

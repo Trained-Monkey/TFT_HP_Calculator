@@ -25,6 +25,7 @@ export class CalculatorComponent {
   itemImagePaths: string[];
 
   selectedChampion: Champion;
+  selectedItems: Item[];
 
   filteredChampions: Observable<Champion[]>;
   searchString: string = "";
@@ -47,7 +48,9 @@ export class CalculatorComponent {
       health: 0,
       armour: 0,
       magicResist: 0
-    }
+    };
+
+    this.selectedItems = [null, null, null];
   }
 
   selectChampion(champion: Champion): void {
@@ -62,10 +65,30 @@ export class CalculatorComponent {
     // Set and get stats and pass into the graph generator to update our graph
     this.graphGeneratorService.updateData(this.stats);
     this.mergeOption = this.graphGeneratorService.mergeOption;
+    this.refreshData();
   }
 
-  selectItem(item: Item, slot: Number) : void {
+  selectItem(item: Item, slot: number) : void {
+    this.selectedItems[slot] = item;
+    this.refreshData();
+  }
 
+  refreshData() : void {
+    this.stats.armour = 0;
+    this.stats.magicResist = 0;
+    for (var i = 0; i < this.selectedItems.length; i ++){
+      if (this.selectedItems[i]) {
+        this.stats.armour += this.selectedItems[i].armour;
+        this.stats.magicResist += this.selectedItems[i].magicResist;
+      }
+    }
+
+    if (this.selectedChampion){
+      this.stats.armour += this.selectedChampion.armour;
+      this.stats.magicResist += this.selectedChampion.magicResist;
+    }
+    // Update our graph
+    this.mergeOption = this.graphGeneratorService.updateData(this.stats);
   }
 
   searchChampions(): void {

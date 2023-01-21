@@ -82,5 +82,6 @@ export class GraphGeneratorService{
     updatedData = flattenedData.map((x) => ({['data']: this.generateData(x)}));
 
     this.mergeOption = {series: updatedData}
+    return this.mergeOption
   }
 }
