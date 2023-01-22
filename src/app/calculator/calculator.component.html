@@ -26,29 +26,51 @@
     </div>
     <div class="modifierContainer">
       <!-- Remove repetition through ngFor? -->
+<!--
       <div class="modifier">
-        Star level:
-        <div *ngFor="let level of [1, 2, 3]">
-          <label for="'level' + level">{{level}}</label>
-          <input  type="radio" name="star" id="'level'+level" checked="true">
-        </div>
+        <form [formGroup]="statModifiers">
+          <input type="radio" formControlName="food" value="beef"> Beef
+          <input type="radio" formControlName="food" value="lamb"> Lamb
+          <input type="radio" formControlName="food" value="fish"> Fish
+        </form>
+      </div> -->
+
+      <div class="modifier">
+        <form [formGroup]="statModifiers" class="modifierForm">
+          Star Level:
+          <div *ngFor="let level of [1, 2, 3]" >
+            <input  type="radio" formControlName="star" [value]="level"> {{level}}
+          </div>
+        </form>
       </div>
 
       <div class="modifier">
-        Defender:
-        <div *ngFor="let level of [0, 2, 4, 6, 8]">
-          <label for="'level' + level">{{level}}</label>
-          <input  type="radio" name="defender" id="'level'+level" checked="true">
-        </div>
+        <form [formGroup]="statModifiers" class="modifierForm">
+          Defender:
+          <div *ngFor="let level of [0, 2, 4, 6]" >
+            <input  type="radio" formControlName="defender" [value]="level"> {{level}}
+          </div>
+        </form>
       </div>
 
       <div class="modifier">
-        Aegis:
-        <div *ngFor="let level of [0, 2, 3, 4, 5]">
-          <label for="'level' + level">{{level}}</label>
-          <input  type="radio" name="aegis" id="'level'+level" checked="true">
-        </div>
+        <form [formGroup]="statModifiers" class="modifierForm">
+          Aegis:
+          <div *ngFor="let level of [0, 2, 4, 6]" >
+            <input  type="radio" formControlName="aegis" [value]="level"> {{level}}
+          </div>
+        </form>
       </div>
+
+      <div class="modifier">
+        <form [formGroup]="statModifiers" class="modifierForm">
+          Brawler:
+          <div *ngFor="let level of [0, 2, 4, 6, 8]" >
+            <input  type="radio" formControlName="brawler" [value]="level"> {{level}}
+          </div>
+        </form>
+      </div>
+
 
     </div>
   </div>

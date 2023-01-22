@@ -3,7 +3,9 @@ import { ItemDataService } from '../common/services/itemData.service';
 import { ChampionDataService } from '../common/services/championData.service';
 import { GraphGeneratorService } from '../common/services/graphGenerator.service';
 import { Observable, filter, map, reduce, tap } from 'rxjs';
-import { Champion, Item, Stats } from '../common/interfaces/interfaces';
+import { Champion, Item, Modifiers, Stats } from '../common/interfaces/interfaces';
+import {FormControl, FormGroup} from '@angular/forms';
+import { StatCalculatorService } from '../common/services/statCalculator.service';
 
 @Component({
   selector: 'app-calculator',
@@ -12,6 +14,14 @@ import { Champion, Item, Stats } from '../common/interfaces/interfaces';
 })
 
 export class CalculatorComponent {
+
+  statModifiers = new FormGroup({
+    star: new FormControl(1),
+    defender: new FormControl(0),
+    aegis: new FormControl(0),
+    brawler: new FormControl(0)
+  });
+
   // Graphs
   options: any;
   mergeOption: any;
@@ -30,12 +40,17 @@ export class CalculatorComponent {
   filteredChampions: Observable<Champion[]>;
   searchString: string = "";
 
-  stats: Stats;
+  stats: Stats = {
+    health: 0,
+    armour: 0,
+    magicResist: 0
+  };
 
   // Inject champion and item service list through constructor
   constructor(private itemDataService: ItemDataService,
               private championDataService: ChampionDataService,
-              private graphGeneratorService: GraphGeneratorService) {
+              private graphGeneratorService: GraphGeneratorService,
+              private statCalculatorService: StatCalculatorService) {
     this.items = this.itemDataService.item;
     this.champions = this.championDataService.champion;
     this.filteredChampions = this.championDataService.filteredChampion;
@@ -44,11 +59,7 @@ export class CalculatorComponent {
     this.mergeOption = graphGeneratorService.mergeOption;
     this.loading = graphGeneratorService.loading;
 
-    this.stats = {
-      health: 0,
-      armour: 0,
-      magicResist: 0
-    };
+    this.statModifiers.valueChanges.subscribe(() => this.refreshData());
 
     this.selectedItems = [null, null, null];
   }
@@ -73,22 +84,23 @@ export class CalculatorComponent {
     this.refreshData();
   }
 
+  // Might want to move all calculations into a service
   refreshData() : void {
-    this.stats.armour = 0;
-    this.stats.magicResist = 0;
-    for (var i = 0; i < this.selectedItems.length; i ++){
-      if (this.selectedItems[i]) {
-        this.stats.armour += this.selectedItems[i].armour;
-        this.stats.magicResist += this.selectedItems[i].magicResist;
-      }
-    }
+    // Move form into modifier
 
-    if (this.selectedChampion){
-      this.stats.armour += this.selectedChampion.armour;
-      this.stats.magicResist += this.selectedChampion.magicResist;
+    let modifiers: Modifiers = {
+      star: this.statModifiers.value.star,
+      defender: this.statModifiers.value.defender,
+      aegis: this.statModifiers.value.aegis,
+      anima: 0,
+      brawler: 0
     }
+    this.stats = this.statCalculatorService.calculateStats(this.selectedChampion, this.selectedItems, modifiers);
+
     // Update our graph
-    this.mergeOption = this.graphGeneratorService.updateData(this.stats);
+    if (this.selectedChampion) {
+      this.mergeOption = this.graphGeneratorService.updateData(this.stats);
+    }
   }
 
   searchChampions(): void {

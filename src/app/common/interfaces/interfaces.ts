@@ -24,6 +24,15 @@ export interface Stats {
   magicResist: number;
 }
 
+export interface Modifiers {
+  star: number;
+  defender: number;
+  aegis: number;
+  brawler: number;
+  anima: number;
+}
+
+
 export enum Class {
   Sureshot,
   Defender,

@@ -21,6 +21,7 @@ import {
 import { CalculatorComponent } from './calculator/calculator.component';
 import { RouterModule } from '@angular/router';
 import { routes } from './app-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 echarts.use(
   [TitleComponent, TooltipComponent, GridComponent, LineChart, CanvasRenderer]
@@ -36,7 +37,8 @@ echarts.use(
     RouterModule.forRoot(routes),
     NgxEchartsModule.forRoot({ echarts }),
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
