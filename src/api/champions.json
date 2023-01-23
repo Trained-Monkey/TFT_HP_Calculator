@@ -1,9 +1,12 @@
 [
   {
-    "name": "Bel'veth", "health": "750", "image": "belveth.png", "armour": 30, "magicResist": 30
+    "name": "Bel'veth", "health": "750", "image": "belveth.png", "armour": 30, "magicResist": 30, "class" : ["Defender"]
   },
   {
     "name": "Urgot", "health": "400", "image": "urgot.png", "armour": 50, "magicResist": 50
+  },
+  {
+    "name": "Sett", "health": "400", "image": "urgot.png", "armour": 50, "magicResist": 50, "class" : ["Defender"]
   },
   {
     "name": "Kai'sa", "health": "400", "image": "kaisa.png"

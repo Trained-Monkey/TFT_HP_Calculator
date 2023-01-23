@@ -29,34 +29,24 @@ export class GraphGeneratorService{
       }
     },
 
+    legend: {
+      show: true,
+
+    },
 
     series: [
       {
-        // data: this.generateData(0),
         showSymbol: false,
         clip: true,
         type: 'line',
-        emphasis: {
-          focus: 'series'
-        },
-
-        // markLine: {
-        //     data: [   [
-        //       {name: 'start', xAxis: 2000, yAxis: 0},
-        //       {name: 'end', xAxis: 2000, yAxis: 1},
-        //     ]   ]
-        // }
+        name: 'Effective Physical HP'
       },
       {
         showSymbol: false,
         clip: true,
-        type: 'line'
-      },
-      {
-        showSymbol: false,
-        clip: true,
-        type: 'line'
-      },
+        type: 'line',
+        name: 'Effective Magical HP'
+      }
     ],
   };
 
@@ -76,7 +66,7 @@ export class GraphGeneratorService{
 
   updateData(stats: Stats) {
     var updatedData = [];
-    var flattenedData = [0, stats.armour, stats.magicResist];
+    var flattenedData = [stats.armour, stats.magicResist];
 
     // Convert stats into effective HP data and format it for echarts
     updatedData = flattenedData.map((x) => ({['data']: this.generateData(x)}));

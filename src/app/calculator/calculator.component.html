@@ -76,7 +76,7 @@
   </div>
   <div class="displayContainer">
     <div class="graphContainer">
-      <div echarts [options]="options" [merge]="mergeOption" class="graphItem"> </div>
+      <div echarts [options]="options" [theme]="theme" [merge]="mergeOption" class="graphItem"> </div>
     </div>
     <div class="statContainer" *ngIf="selectedChampion">
         <div class="statItem">Health: {{stats.health}} </div>

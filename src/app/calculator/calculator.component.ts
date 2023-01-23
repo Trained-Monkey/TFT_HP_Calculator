@@ -6,6 +6,8 @@ import { Observable, filter, map, reduce, tap } from 'rxjs';
 import { Champion, Item, Modifiers, Stats } from '../common/interfaces/interfaces';
 import {FormControl, FormGroup} from '@angular/forms';
 import { StatCalculatorService } from '../common/services/statCalculator.service';
+import { ThemeOption } from 'ngx-echarts';
+import { dark } from 'src/assets/theme/dark';
 
 @Component({
   selector: 'app-calculator',
@@ -45,6 +47,7 @@ export class CalculatorComponent {
     armour: 0,
     magicResist: 0
   };
+  theme: string | ThemeOption = dark;
 
   // Inject champion and item service list through constructor
   constructor(private itemDataService: ItemDataService,

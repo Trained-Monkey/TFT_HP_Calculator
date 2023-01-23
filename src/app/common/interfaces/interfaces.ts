@@ -6,7 +6,8 @@ export interface Champion {
   armour: number;
   magicResist: number;
 
-  class: Class;
+  class: string[];
+  origin: string[];
 }
 
 export interface Item {
@@ -35,9 +36,21 @@ export interface Modifiers {
 
 export enum Class {
   Sureshot,
-  Defender,
-  Brawler,
-  Aegis,
-  Prankster,
+  Defender = "Defender",
+  Brawler = "Brawler",
+  Aegis = "Aegis",
+  // Prankster,
+  // Mascot,
+  // Hacker,
+  // Spellslinger,
+  // Renegade
 }
 
+export enum Origin {
+  Admin,
+  OxForce,
+  Gadgeteen,
+  Civillian,
+  Threat,
+  AnimaSquad = "AnimaSquad",
+}

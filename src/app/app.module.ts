@@ -12,7 +12,9 @@ import { LineChart } from 'echarts/charts';
 import {
   TitleComponent,
   TooltipComponent,
-  GridComponent
+  GridComponent,
+  LegendComponent
+  
 } from 'echarts/components';
 // Import the Canvas renderer, note that introducing the CanvasRenderer or SVGRenderer is a required step
 import {
@@ -24,7 +26,7 @@ import { routes } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
 echarts.use(
-  [TitleComponent, TooltipComponent, GridComponent, LineChart, CanvasRenderer]
+  [TitleComponent, TooltipComponent, GridComponent, LineChart, CanvasRenderer, LegendComponent]
 );
 
 @NgModule({
