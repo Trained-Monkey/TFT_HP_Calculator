@@ -49,6 +49,13 @@ export class CalculatorComponent {
   };
   theme: string | ThemeOption = dark;
 
+  PHPGrowthArmour: number;
+  PHPGrowthHealth: number;
+
+  MHPGrowthMagicResist: number;
+  MHPGrowthHealth: number;
+
+
   // Inject champion and item service list through constructor
   constructor(private itemDataService: ItemDataService,
               private championDataService: ChampionDataService,
@@ -63,6 +70,15 @@ export class CalculatorComponent {
     this.loading = graphGeneratorService.loading;
 
     this.statModifiers.valueChanges.subscribe(() => this.refreshData());
+
+    this.statCalculatorService.PHPGrowth.subscribe({
+      next: (v: Stats) => {this.PHPGrowthArmour = v.armour; this.PHPGrowthHealth = v.health}
+    })
+
+    this.statCalculatorService.MHPGrowth.subscribe({
+      next: (v: Stats) => {this.MHPGrowthMagicResist = v.magicResist; this.MHPGrowthHealth = v.health}
+    })
+
 
     this.selectedItems = [null, null, null];
   }

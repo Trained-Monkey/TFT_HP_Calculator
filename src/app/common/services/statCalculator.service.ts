@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Stats, Champion, Item, Modifiers, Origin } from "../interfaces/interfaces";
 import { Class } from "../interfaces/interfaces";
+import { Subject } from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,9 @@ export class StatCalculatorService {
   defenderMap = new Map();
   aegisMap = new Map();
   brawlerMap = new Map();
+
+  PHPGrowth = new Subject<Stats>();
+  MHPGrowth = new Subject<Stats>();
 
   constructor() {
     // Maybe move this out and export as a constant?
@@ -28,6 +32,7 @@ export class StatCalculatorService {
     this.brawlerMap.set(2,[30, 60]);
     this.brawlerMap.set(4,[50, 80]);
     this.brawlerMap.set(6,[180, 400]);
+
   }
 
   calculateStats(champion: Champion, items: Item[], modifiers: Modifiers) : Stats {
@@ -49,6 +54,9 @@ export class StatCalculatorService {
     {
       result = this.addModifierStat(result, champion, modifiers);
     }
+
+    this.PHPGrowth.next(this.calculatePHPGrowth(result));
+    this.MHPGrowth.next(this.calculateMHPGrowth(result));
 
     return result;
   }
@@ -98,5 +106,25 @@ export class StatCalculatorService {
 
 
     return curr;
+  }
+
+  private calculatePHPGrowth(stat: Stats): Stats {
+    var result: Stats = {
+      health: 1 + stat.armour/100,
+      armour: stat.health/100,
+      magicResist: 0
+    }
+
+    return result;
+  }
+
+  private calculateMHPGrowth(stat: Stats): Stats {
+    var result: Stats = {
+      health: 1 + stat.magicResist/100,
+      armour: 0,
+      magicResist: stat.health/100
+    }
+
+    return result;
   }
 }
