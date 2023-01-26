@@ -79,7 +79,6 @@ export class CalculatorComponent {
       next: (v: Stats) => {this.MHPGrowthMagicResist = v.magicResist; this.MHPGrowthHealth = v.health}
     })
 
-
     this.selectedItems = [null, null, null];
   }
 
