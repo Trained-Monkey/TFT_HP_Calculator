@@ -5,19 +5,23 @@
         <img [src]="championImagePath">
 
         <div class="unitItemContent">
-          <input type="text" [(ngModel)]="searchString" id="myInput" (keyup)="searchChampions()" placeholder="Search for names..">
+          <input type="text" [(ngModel)]="championSearchString" id="myInput" (keyup)="searchChampions()" placeholder="Search for names..">
 
           <div *ngFor="let c of filteredChampions | async" class="unitItemOption" (click)="selectChampion(c)">
-            <img [src]="'assets/images/' + c.image" onerror="this.onerror=null; this.remove();">
+            <img [src]="'assets/images/champions/' + c.image" onerror="this.onerror=null; this.remove();">
             <p> {{c.name}} </p>
           </div>
         </div>
       </div>
 
       <div class="unitItem" *ngFor="let a of [0, 1, 2]">
+        <img [src]="itemImagePaths[a]">
+
         <div class="unitItemContent">
-          <div *ngFor="let i of items | async" class="unitItemOption" (click)="selectItem(i, a)">
-            <img [src]="'assets/images/' + i.image" onerror="this.onerror=null; this.remove();">
+          <input type="text" [(ngModel)]="itemSearchString" id="myInput" (keyup)="searchItems()" placeholder="Search for names..">
+
+          <div *ngFor="let i of filteredItems | async" class="unitItemOption" (click)="selectItem(i, a)">
+            <img [src]="'assets/images/items/' + i.image" onerror="this.onerror=null; this.remove();">
             <p> {{i.name}} </p>
           </div>
         </div>
@@ -35,40 +39,47 @@
         </form>
       </div> -->
 
-      <div class="modifier">
-        <form [formGroup]="statModifiers" class="modifierForm">
-          Star Level:
-          <div *ngFor="let level of [1, 2, 3]" >
-            <input  type="radio" formControlName="star" [value]="level"> {{level}}
-          </div>
-        </form>
+      <div class="modifierText">
+        <div> Star Level: </div>
+        <div> Defender: </div>
+        <div> Aegis: </div>
+        <div> Brawler: </div>
       </div>
 
-      <div class="modifier">
-        <form [formGroup]="statModifiers" class="modifierForm">
-          Defender:
-          <div *ngFor="let level of [0, 2, 4, 6]" >
-            <input  type="radio" formControlName="defender" [value]="level"> {{level}}
-          </div>
-        </form>
-      </div>
+      <div class="modifierInput">
+        <div class="modifier">
+          <form [formGroup]="statModifiers" class="modifierForm">
+            <div *ngFor="let level of [1, 2, 3]" >
+              <input  type="radio" formControlName="star" [value]="level"> {{level}}
+            </div>
+          </form>
+        </div>
 
-      <div class="modifier">
-        <form [formGroup]="statModifiers" class="modifierForm">
-          Aegis:
-          <div *ngFor="let level of [0, 2, 4, 6]" >
-            <input  type="radio" formControlName="aegis" [value]="level"> {{level}}
-          </div>
-        </form>
-      </div>
+        <div class="modifier">
+          <form [formGroup]="statModifiers" class="modifierForm">
+            <div *ngFor="let level of [0, 2, 4, 6]" >
+              <input  type="radio" formControlName="defender" [value]="level"> {{level}}
+            </div>
+          </form>
+        </div>
 
-      <div class="modifier">
-        <form [formGroup]="statModifiers" class="modifierForm">
-          Brawler:
-          <div *ngFor="let level of [0, 2, 4, 6, 8]" >
-            <input  type="radio" formControlName="brawler" [value]="level"> {{level}}
-          </div>
-        </form>
+        <div class="modifier">
+          <form [formGroup]="statModifiers" class="modifierForm">
+            <div *ngFor="let level of [0, 2, 4, 6]" >
+              <input  type="radio" formControlName="aegis" [value]="level"> {{level}}
+            </div>
+          </form>
+        </div>
+
+        <div class="modifier">
+          <form [formGroup]="statModifiers" class="modifierForm">
+            <div *ngFor="let level of [0, 2, 4, 6, 8]" >
+              <input  type="radio" formControlName="brawler" [value]="level"> {{level}}
+            </div>
+          </form>
+        </div>
+
+
       </div>
 
 

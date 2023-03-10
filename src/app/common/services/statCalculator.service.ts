@@ -47,6 +47,8 @@ export class StatCalculatorService {
 
   private addChampionStat(curr: Stats, champ: Champion, star: number = 1) : Stats {
     if (champ) {
+      // Might need special cases here to account for those that gain extra stats
+      // when levelling up
       curr.health += champ.health * Math.pow(1.5, star - 1);
       curr.armour += champ.armour;
       curr.magicResist += champ.magicResist;

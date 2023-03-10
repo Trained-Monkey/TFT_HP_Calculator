@@ -40,7 +40,10 @@ export class CalculatorComponent {
   selectedItems: Item[];
 
   filteredChampions: Observable<Champion[]>;
-  searchString: string = "";
+  filteredItems: Observable<Item[]>;
+
+  championSearchString: string = "";
+  itemSearchString: string = "";
 
   stats: Stats = {
     health: 0,
@@ -55,7 +58,6 @@ export class CalculatorComponent {
   MHPGrowthMagicResist: number;
   MHPGrowthHealth: number;
 
-
   // Inject champion and item service list through constructor
   constructor(private itemDataService: ItemDataService,
               private championDataService: ChampionDataService,
@@ -63,6 +65,7 @@ export class CalculatorComponent {
               private statCalculatorService: StatCalculatorService) {
     this.items = this.itemDataService.item;
     this.champions = this.championDataService.champion;
+    this.filteredItems = this.itemDataService.filteredItem;
     this.filteredChampions = this.championDataService.filteredChampion;
 
     this.options = graphGeneratorService.options;
@@ -80,6 +83,7 @@ export class CalculatorComponent {
     })
 
     this.selectedItems = [null, null, null];
+    this.itemImagePaths = ['', '', ''];
   }
 
   selectChampion(champion: Champion): void {
@@ -89,7 +93,7 @@ export class CalculatorComponent {
     this.stats.magicResist = champion.magicResist;
 
     this.selectedChampion = champion;
-    this.championImagePath = "assets/images/" + champion.image;
+    this.championImagePath = "assets/images/champions/" + champion.image;
 
     // Set and get stats and pass into the graph generator to update our graph
     this.graphGeneratorService.updateData(this.stats);
@@ -99,6 +103,7 @@ export class CalculatorComponent {
 
   selectItem(item: Item, slot: number) : void {
     this.selectedItems[slot] = item;
+    this.itemImagePaths[slot] = "assets/images/items/" + item.image;
     this.refreshData();
   }
 
@@ -111,7 +116,10 @@ export class CalculatorComponent {
       defender: this.statModifiers.value.defender,
       aegis: this.statModifiers.value.aegis,
       anima: 0,
-      brawler: 0
+      brawler: 0,
+      // mech: []
+      // ionic
+      // lastwhisper
     }
     this.stats = this.statCalculatorService.calculateStats(this.selectedChampion, this.selectedItems, modifiers);
 
@@ -122,6 +130,10 @@ export class CalculatorComponent {
   }
 
   searchChampions(): void {
-    this.filteredChampions = this.championDataService.searchChampions(this.searchString);
+    this.filteredChampions = this.championDataService.searchChampions(this.championSearchString);
+  }
+
+  searchItems(): void {
+    this.filteredItems = this.itemDataService.searchItems(this.itemSearchString);
   }
 }

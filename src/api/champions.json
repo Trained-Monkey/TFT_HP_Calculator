@@ -1,14 +1,474 @@
 [
   {
-    "name": "Bel'veth", "health": "750", "image": "belveth.png", "armour": 30, "magicResist": 30, "class" : ["Defender"]
+    "name": "Alistar",
+    "health": "750",
+    "image": "alistar.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
   },
   {
-    "name": "Urgot", "health": "400", "image": "urgot.png", "armour": 50, "magicResist": 50
+    "name": "Annie",
+    "health": "750",
+    "image": "annie.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
   },
   {
-    "name": "Sett", "health": "400", "image": "urgot.png", "armour": 50, "magicResist": 50, "class" : ["Defender"]
+    "name": "Aphelios",
+    "health": "750",
+    "image": "aphelios.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
   },
   {
-    "name": "Kai'sa", "health": "400", "image": "kaisa.png"
+    "name": "Ashe",
+    "health": "750",
+    "image": "ashe.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "AurelionSol",
+    "health": "750",
+    "image": "aurelionsol.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "Belveth",
+    "health": "750",
+    "image": "belveth.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "Blitzcrank",
+    "health": "750",
+    "image": "blitzcrank.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "Camille",
+    "health": "750",
+    "image": "camille.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "Chogath",
+    "health": "750",
+    "image": "chogath.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "Draven",
+    "health": "750",
+    "image": "draven.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "Ekko",
+    "health": "750",
+    "image": "ekko.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "Ezreal",
+    "health": "750",
+    "image": "ezreal.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "Fiddlesticks",
+    "health": "750",
+    "image": "fiddlesticks.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "Fiora",
+    "health": "750",
+    "image": "fiora.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "Galio",
+    "health": "750",
+    "image": "galio.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "Gangplank",
+    "health": "750",
+    "image": "gangplank.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "Janna",
+    "health": "750",
+    "image": "janna.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "Jax",
+    "health": "750",
+    "image": "jax.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "Jinx",
+    "health": "750",
+    "image": "jinx.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "Kaisa",
+    "health": "750",
+    "image": "kaisa.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "Kayle",
+    "health": "750",
+    "image": "kayle.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "Leblanc",
+    "health": "750",
+    "image": "leblanc.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "LeeSin",
+    "health": "750",
+    "image": "leesin.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "Leona",
+    "health": "750",
+    "image": "leona.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "Lulu",
+    "health": "750",
+    "image": "lulu.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "Lux",
+    "health": "750",
+    "image": "lux.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "Malphite",
+    "health": "750",
+    "image": "malphite.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "MissFortune",
+    "health": "750",
+    "image": "missfortune.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "Mordekaiser",
+    "health": "750",
+    "image": "mordekaiser.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "MonkeyKing",
+    "health": "750",
+    "image": "monkeyking.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "Nasus",
+    "health": "750",
+    "image": "nasus.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "Nilah",
+    "health": "750",
+    "image": "nilah.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "Nunu",
+    "health": "750",
+    "image": "nunu.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "Poppy",
+    "health": "750",
+    "image": "poppy.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "Rammus",
+    "health": "750",
+    "image": "rammus.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "Rell",
+    "health": "750",
+    "image": "rell.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "Renekton",
+    "health": "750",
+    "image": "renekton.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "Riven",
+    "health": "750",
+    "image": "riven.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "Samira",
+    "health": "750",
+    "image": "samira.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "Sejuani",
+    "health": "750",
+    "image": "sejuani.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "Senna",
+    "health": "750",
+    "image": "senna.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "Sett",
+    "health": "750",
+    "image": "sett.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "Sivir",
+    "health": "750",
+    "image": "sivir.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "Sona",
+    "health": "750",
+    "image": "sona.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "Soraka",
+    "health": "750",
+    "image": "soraka.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "Sylas",
+    "health": "750",
+    "image": "sylas.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "Syndra",
+    "health": "750",
+    "image": "syndra.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "Taliyah",
+    "health": "750",
+    "image": "taliyah.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "Talon",
+    "health": "750",
+    "image": "talon.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "Urgot",
+    "health": "750",
+    "image": "urgot.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "Vayne",
+    "health": "750",
+    "image": "vayne.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "Velkoz",
+    "health": "750",
+    "image": "velkoz.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "Vi",
+    "health": "750",
+    "image": "vi.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "Viego",
+    "health": "750",
+    "image": "viego.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "Yasuo",
+    "health": "750",
+    "image": "yasuo.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "Yuumi",
+    "health": "750",
+    "image": "yuumi.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "Zac",
+    "health": "750",
+    "image": "zac.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "Zed",
+    "health": "750",
+    "image": "zed.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
+  },
+  {
+    "name": "Zoe",
+    "health": "750",
+    "image": "zoe.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": []
   }
 ]

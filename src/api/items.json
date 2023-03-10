@@ -1,8 +1,27 @@
 [
-  {
-    "name": "Bramble", "health": 0,"armour": 80, "magicResist": 0, "image": "Bramble.png"
-  },
-  {
-    "name": "Dclaw", "health": 0, "armour": 0, "magicResist": 70, "image": "DClaw.png"
-  }
+  { "name": "Bloodthirster", "health": 0, "armour": 0, "magicResist": 20, "image": "Bloodthirster.png" },
+  { "name": "Bramble Vest", "health": 0, "armour": 70, "magicResist": 0, "image": "BrambleVest.png" },
+  { "name": "Chain Vest", "health": 0, "armour": 20, "magicResist": 0, "image": "ChainVest.png" },
+  { "name": "Dragons Claw", "health": 0, "armour": 0, "magicResist": 70, "image": "DragonsClaw.png" },
+  { "name": "Shroud", "health": 0, "armour": 20, "magicResist": 0, "image": "Shroud.png" },
+  { "name": "Protector's Vow", "health": 0, "armour": 20, "magicResist": 0, "image": "FrozenHeart.png" },
+  { "name": "GiantsBelt", "health": 150, "armour": 0, "magicResist": 0, "image": "GiantsBelt.png" },
+  { "name": "Edge of Night", "health": 0, "armour": 20, "magicResist": 0, "image": "GuardianAngel.png" },
+  { "name": "Chalice", "health": 0, "armour": 0, "magicResist": 20, "image": "Chalice.png" },
+  { "name": "Ionic Spark", "health": 0, "armour": 0, "magicResist": 20, "image": "IonicSpark.png" },
+  { "name": "Locket Of The Iron Solari", "health": 0, "armour": 20, "magicResist": 0, "image": "LocketOfTheIronSolari.png" },
+  { "name": "Quicksilver", "health": 0, "armour": 0, "magicResist": 20, "image": "Quicksilver.png" },
+  { "name": "Morellonomicon", "health": 150, "armour": 0, "magicResist": 0, "image": "Morellonomicon.png" },
+  { "name": "Negatron Cloak", "health": 0, "armour": 0, "magicResist": 20, "image": "NegatronCloak.png" },
+  { "name": "Sunfire Cape", "health": 300, "armour": 20, "magicResist": 0, "image": "RedBuff.png" },
+  { "name": "Redemption", "health": 150, "armour": 0, "magicResist": 0, "image": "Redemption.png" },
+  { "name": "Runaans Hurricane", "health": 0, "armour": 0, "magicResist": 20, "image": "RunaansHurricane.png" },
+  { "name": "Gargoyle Stoneplate", "health": 0, "armour": 20, "magicResist": 20, "image": "GargoyleStoneplate.png" },
+  { "name": "ZZRot", "health": 150, "armour": 0, "magicResist": 0, "image": "TitanicHydra.png" },
+  { "name": "Titans Resolve", "health": 0, "armour": 20, "magicResist": 0, "image": "TitansResolve.png" },
+  { "name": "Warmogs Armor", "health": 800, "armour": 0, "magicResist": 0, "image": "WarmogsArmor.png" },
+  { "name": "Zekes Herald", "health": 150, "armour": 0, "magicResist": 0, "image": "ZekesHerald.png" },
+  { "name": "Zephyr", "health": 150, "armour": 0, "magicResist": 20, "image": "Zephyr.png" },
+  { "name": "DefenderEmblemItem", "health": 0, "armour": 0, "magicResist": 0, "image": "DefenderEmblemItem.png" },
+  { "name": "AegisEmblemItem", "health": 0, "armour": 0, "magicResist": 0, "image": "AegisEmblemItem.png" }
 ]

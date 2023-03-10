@@ -31,6 +31,9 @@ export interface Modifiers {
   aegis: number;
   brawler: number;
   anima: number;
+  // mech: [string] | null;
+  // ionic: boolean;
+  // lastwhisper: boolean;
 }
 
 
