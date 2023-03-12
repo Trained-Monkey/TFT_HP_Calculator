@@ -30,14 +30,7 @@
     </div>
     <div class="modifierContainer">
       <!-- Remove repetition through ngFor? -->
-<!--
-      <div class="modifier">
-        <form [formGroup]="statModifiers">
-          <input type="radio" formControlName="food" value="beef"> Beef
-          <input type="radio" formControlName="food" value="lamb"> Lamb
-          <input type="radio" formControlName="food" value="fish"> Fish
-        </form>
-      </div> -->
+      <app-dynamic-form [questions]="questions$ | async"></app-dynamic-form>
 
       <div class="modifierText">
         <div> Star Level: </div>

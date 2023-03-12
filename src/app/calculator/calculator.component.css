@@ -48,8 +48,8 @@
   min-width: 180px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
-  max-height:200px;/* you can change as you need it */
-  overflow:auto;/* to get scroll */
+  max-height:200px;
+  overflow:auto;             /* to get scroll */
   margin-top: 63px;
 }
 

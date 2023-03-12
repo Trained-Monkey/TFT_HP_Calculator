@@ -4,15 +4,19 @@ import { ChampionDataService } from '../common/services/championData.service';
 import { GraphGeneratorService } from '../common/services/graphGenerator.service';
 import { Observable, filter, map, reduce, tap } from 'rxjs';
 import { Champion, Item, Modifiers, Stats } from '../common/interfaces/interfaces';
-import {FormControl, FormGroup} from '@angular/forms';
+import { FormControl, FormGroup} from '@angular/forms';
 import { StatCalculatorService } from '../common/services/statCalculator.service';
 import { ThemeOption } from 'ngx-echarts';
 import { dark } from 'src/assets/theme/dark';
+import { ModifierService } from '../common/services/modifier.service';
+import { DynamicFormComponent } from '../common/component/modifiers/modifier-dynamic-form.component';
+import { ModifierControlService } from '../common/services/modifier-control.service';
 
 @Component({
   selector: 'app-calculator',
   templateUrl: './calculator.component.html',
-  styleUrls: ['./calculator.component.css']
+  styleUrls: ['./calculator.component.css'],
+  providers: [ModifierService, DynamicFormComponent, ModifierControlService ]
 })
 
 export class CalculatorComponent {
@@ -22,6 +26,9 @@ export class CalculatorComponent {
     defender: new FormControl(0),
     aegis: new FormControl(0),
     brawler: new FormControl(0)
+    // mech: new FormControl([]),
+    // ionic: new FormControl(false),
+    // lastwhisper: new FormControl(false)
   });
 
   // Graphs
@@ -57,12 +64,16 @@ export class CalculatorComponent {
 
   MHPGrowthMagicResist: number;
   MHPGrowthHealth: number;
+  questions$: Observable<import("../common/component/modifiers/modifier-base").ModifierBase<string>[]>;
+  payload: string;
 
   // Inject champion and item service list through constructor
   constructor(private itemDataService: ItemDataService,
               private championDataService: ChampionDataService,
               private graphGeneratorService: GraphGeneratorService,
-              private statCalculatorService: StatCalculatorService) {
+              private statCalculatorService: StatCalculatorService,
+              private modifierService: ModifierService,
+              private form: DynamicFormComponent) {
     this.items = this.itemDataService.item;
     this.champions = this.championDataService.champion;
     this.filteredItems = this.itemDataService.filteredItem;
@@ -84,6 +95,11 @@ export class CalculatorComponent {
 
     this.selectedItems = [null, null, null];
     this.itemImagePaths = ['', '', ''];
+
+    this.questions$ = modifierService.getQuestions();
+    // Ping modifier service to update modifiers
+    // How to retrieve submitted form?
+    this.payload = form.payLoad;
   }
 
   selectChampion(champion: Champion): void {
@@ -107,9 +123,11 @@ export class CalculatorComponent {
     this.refreshData();
   }
 
-  // Might want to move all calculations into a service
   refreshData() : void {
     // Move form into modifier
+    // Convert modifiers to form?
+
+    this.questions$ = this.modifierService.getNewQuestions(this.selectedChampion, this.selectedItems);
 
     let modifiers: Modifiers = {
       star: this.statModifiers.value.star,
@@ -127,6 +145,8 @@ export class CalculatorComponent {
     if (this.selectedChampion) {
       this.mergeOption = this.graphGeneratorService.updateData(this.stats);
     }
+
+
   }
 
   searchChampions(): void {
