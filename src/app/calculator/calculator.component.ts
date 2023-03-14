@@ -145,8 +145,6 @@ export class CalculatorComponent {
     if (this.selectedChampion) {
       this.mergeOption = this.graphGeneratorService.updateData(this.stats);
     }
-
-
   }
 
   searchChampions(): void {

@@ -5,7 +5,7 @@
     "image": "alistar.png",
     "armour": 30,
     "magicResist": 30,
-    "class": []
+    "class": ["aegis"]
   },
   {
     "name": "Annie",
@@ -53,7 +53,7 @@
     "image": "blitzcrank.png",
     "armour": 30,
     "magicResist": 30,
-    "class": []
+    "class": ["brawler"]
   },
   {
     "name": "Camille",
@@ -85,7 +85,7 @@
     "image": "ekko.png",
     "armour": 30,
     "magicResist": 30,
-    "class": []
+    "class": ["aegis"]
   },
   {
     "name": "Ezreal",
@@ -141,7 +141,7 @@
     "image": "jax.png",
     "armour": 30,
     "magicResist": 30,
-    "class": []
+    "class": ["brawler"]
   },
   {
     "name": "Jinx",
@@ -181,7 +181,7 @@
     "image": "leesin.png",
     "armour": 30,
     "magicResist": 30,
-    "class": []
+    "class": ["brawler"]
   },
   {
     "name": "Leona",
@@ -189,7 +189,7 @@
     "image": "leona.png",
     "armour": 30,
     "magicResist": 30,
-    "class": []
+    "class": ["aegis"]
   },
   {
     "name": "Lulu",
@@ -237,7 +237,7 @@
     "image": "monkeyking.png",
     "armour": 30,
     "magicResist": 30,
-    "class": []
+    "class": ["defender"]
   },
   {
     "name": "Nasus",
@@ -269,7 +269,7 @@
     "image": "poppy.png",
     "armour": 30,
     "magicResist": 30,
-    "class": []
+    "class": ["defender"]
   },
   {
     "name": "Rammus",
@@ -285,7 +285,7 @@
     "image": "rell.png",
     "armour": 30,
     "magicResist": 30,
-    "class": []
+    "class": ["defender"]
   },
   {
     "name": "Renekton",
@@ -293,7 +293,7 @@
     "image": "renekton.png",
     "armour": 30,
     "magicResist": 30,
-    "class": []
+    "class": ["brawler"]
   },
   {
     "name": "Riven",
@@ -301,7 +301,7 @@
     "image": "riven.png",
     "armour": 30,
     "magicResist": 30,
-    "class": []
+    "class": ["anima", "brawler", "defender"]
   },
   {
     "name": "Samira",
@@ -317,7 +317,7 @@
     "image": "sejuani.png",
     "armour": 30,
     "magicResist": 30,
-    "class": []
+    "class": ["brawler"]
   },
   {
     "name": "Senna",
@@ -333,7 +333,7 @@
     "image": "sett.png",
     "armour": 30,
     "magicResist": 30,
-    "class": []
+    "class": ["defender", "mech"]
   },
   {
     "name": "Sivir",
@@ -365,7 +365,7 @@
     "image": "sylas.png",
     "armour": 30,
     "magicResist": 30,
-    "class": []
+    "class": ["anima"]
   },
   {
     "name": "Syndra",
@@ -405,7 +405,7 @@
     "image": "vayne.png",
     "armour": 30,
     "magicResist": 30,
-    "class": []
+    "class": ["anima"]
   },
   {
     "name": "Velkoz",

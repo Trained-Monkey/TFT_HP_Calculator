@@ -59,7 +59,7 @@ export class ModifierService {
 
   // Take in champion and items
   // Give out updates list of modifiers
-  getNewQuestions(champ: Champion, item: Item[]) {
+  getNewQuestions(champ: Champion, items: Item[]) {
     // Reset updated questions
     this.updatedQuestions = [
       new RadioModifier({
@@ -98,8 +98,26 @@ export class ModifierService {
       }),
     ];
 
-    // Anima
-    if (true){
+    // Brawler
+    if (this.isBrawler(champ, items)){
+      this.updatedQuestions.push(
+        new RadioModifier({
+          key: 'brawler',
+          label: 'Brawler: ',
+          options: [
+            {key: '0',  value: '0'},
+            {key: '2',  value: '2'},
+            {key: '4',  value: '4'},
+            {key: '6',  value: '6'},
+            {key: '8',  value: '8'}
+          ],
+          order: 3
+        })
+      )
+    }
+
+    // // Anima
+    if (this.isAnima(champ, items)){
       this.updatedQuestions.push(
         new TextboxModifier({
           key: 'anima',
@@ -107,14 +125,56 @@ export class ModifierService {
           order: 3
         })
       )
-
-
     }
 
     // Mech
-
-    // Brawler
-
+    console.log(this.updatedQuestions);
     return of(this.updatedQuestions.sort((a, b) => a.order - b.order));
+  }
+
+  isBrawler(champ: Champion, items: Item[]): boolean {
+    // Check champ
+    if (champ != null){
+      for (let i = 0; i < champ.class.length; i++){
+        if (champ.class[i] == "brawler"){
+          return true;
+        }
+      }
+    }
+
+    // Check emblem in item list
+    for (let i = 0; i < items.length; i++){
+      if (items[i] != null && items[i].name == "BrawlerEmblemItem"){
+        return true;
+      }
+    }
+
+    return false;
+  }
+
+  isAnima(champ: Champion, items: Item[]): boolean {
+    // Check champ
+    if (champ != null){
+      for (let i = 0; i < champ.class.length; i++){
+        if (champ.class[i] == "anima"){
+          return true;
+        }
+      }
+    }
+
+    // Check emblem in item list
+    for (let i = 0; i < items.length; i++){
+      if (items[i] != null && items[i].name == "AnimaEmblemItem"){
+        return true;
+      }
+    }
+    return false;
+  }
+
+  isMech(champ: Champion, items: Item[]): boolean {
+    // Check champ
+
+    // Check emblem in item list
+    return false;
   }
 }

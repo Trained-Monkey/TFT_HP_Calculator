@@ -23,5 +23,7 @@
   { "name": "Zekes Herald", "health": 150, "armour": 0, "magicResist": 0, "image": "ZekesHerald.png" },
   { "name": "Zephyr", "health": 150, "armour": 0, "magicResist": 20, "image": "Zephyr.png" },
   { "name": "DefenderEmblemItem", "health": 0, "armour": 0, "magicResist": 0, "image": "DefenderEmblemItem.png" },
-  { "name": "AegisEmblemItem", "health": 0, "armour": 0, "magicResist": 0, "image": "AegisEmblemItem.png" }
+  { "name": "AegisEmblemItem", "health": 0, "armour": 0, "magicResist": 0, "image": "AegisEmblemItem.png" },
+  { "name": "AnimaEmblemItem", "health": 0, "armour": 0, "magicResist": 0, "image": "AnimaEmblemItem.png" },
+  { "name": "BrawlerEmblemItem", "health": 0, "armour": 0, "magicResist": 0, "image": "BrawlerEmblemItem.png" }
 ]

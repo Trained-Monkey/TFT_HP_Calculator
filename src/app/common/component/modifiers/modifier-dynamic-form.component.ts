@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
 import { ModifierBase } from './modifier-base';
@@ -10,7 +10,7 @@ import { ModifierControlService } from '../../services/modifier-control.service'
   templateUrl: './modifier-dynamic-form.component.html',
   providers: [ ModifierControlService ]
 })
-export class DynamicFormComponent implements OnInit {
+export class DynamicFormComponent implements OnInit, OnChanges {
 
   @Input() questions: ModifierBase<string>[] | null = [];
   form!: FormGroup;
@@ -19,6 +19,11 @@ export class DynamicFormComponent implements OnInit {
   constructor(private qcs: ModifierControlService) {}
 
   ngOnInit() {
+    // Rerun this line of code when something changes in the form group
+    this.form = this.qcs.toFormGroup(this.questions as ModifierBase<string>[]);
+  }
+
+  ngOnChanges(){
     this.form = this.qcs.toFormGroup(this.questions as ModifierBase<string>[]);
   }
 
