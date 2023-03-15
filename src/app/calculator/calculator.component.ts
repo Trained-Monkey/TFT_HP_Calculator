@@ -11,6 +11,7 @@ import { dark } from 'src/assets/theme/dark';
 import { ModifierService } from '../common/services/modifier.service';
 import { DynamicFormComponent } from '../common/component/modifiers/modifier-dynamic-form.component';
 import { ModifierControlService } from '../common/services/modifier-control.service';
+import { ModifierBase } from '../common/component/modifiers/modifier-base';
 
 @Component({
   selector: 'app-calculator',
@@ -21,15 +22,7 @@ import { ModifierControlService } from '../common/services/modifier-control.serv
 
 export class CalculatorComponent {
 
-  statModifiers = new FormGroup({
-    star: new FormControl(1),
-    defender: new FormControl(0),
-    aegis: new FormControl(0),
-    brawler: new FormControl(0)
-    // mech: new FormControl([]),
-    // ionic: new FormControl(false),
-    // lastwhisper: new FormControl(false)
-  });
+  statModifiers : FormGroup;
 
   // Graphs
   options: any;
@@ -64,7 +57,7 @@ export class CalculatorComponent {
 
   MHPGrowthMagicResist: number;
   MHPGrowthHealth: number;
-  questions$: Observable<import("../common/component/modifiers/modifier-base").ModifierBase<string>[]>;
+  questions$: Observable<ModifierBase<string>[]>;
   payload: string;
 
   // Inject champion and item service list through constructor
@@ -72,8 +65,7 @@ export class CalculatorComponent {
               private championDataService: ChampionDataService,
               private graphGeneratorService: GraphGeneratorService,
               private statCalculatorService: StatCalculatorService,
-              private modifierService: ModifierService,
-              private form: DynamicFormComponent) {
+              private modifierService: ModifierService) {
     this.items = this.itemDataService.item;
     this.champions = this.championDataService.champion;
     this.filteredItems = this.itemDataService.filteredItem;
@@ -83,7 +75,7 @@ export class CalculatorComponent {
     this.mergeOption = graphGeneratorService.mergeOption;
     this.loading = graphGeneratorService.loading;
 
-    this.statModifiers.valueChanges.subscribe(() => this.refreshData());
+
 
     this.statCalculatorService.PHPGrowth.subscribe({
       next: (v: Stats) => {this.PHPGrowthArmour = v.armour; this.PHPGrowthHealth = v.health}
@@ -97,9 +89,13 @@ export class CalculatorComponent {
     this.itemImagePaths = ['', '', ''];
 
     this.questions$ = modifierService.getQuestions();
-    // Ping modifier service to update modifiers
-    // How to retrieve submitted form?
-    this.payload = form.payLoad;
+
+  }
+
+  receiveModifiers(form: FormGroup){
+    this.statModifiers = form;
+    // this.statModifiers.valueChanges.subscribe(() => this.refreshData());
+    // this.refreshData();
   }
 
   selectChampion(champion: Champion): void {
@@ -124,9 +120,6 @@ export class CalculatorComponent {
   }
 
   refreshData() : void {
-    // Move form into modifier
-    // Convert modifiers to form?
-
     this.questions$ = this.modifierService.getNewQuestions(this.selectedChampion, this.selectedItems);
 
     let modifiers: Modifiers = {
@@ -139,6 +132,7 @@ export class CalculatorComponent {
       // ionic
       // lastwhisper
     }
+
     this.stats = this.statCalculatorService.calculateStats(this.selectedChampion, this.selectedItems, modifiers);
 
     // Update our graph

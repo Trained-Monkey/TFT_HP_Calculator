@@ -3,15 +3,15 @@
 
   <div [ngSwitch]="question.controlType">
     <!-- Type 1: Basic Radio Checkbox (Brawler)-->
-    <div *ngSwitchCase="'radio'">
+    <div *ngSwitchCase="'radio'" >
       <div *ngFor="let opt of question.options" >
-        <input type="radio" [formControlName]="question.key" [value]="opt.key"> {{opt.value}}
+        <input type="radio" [formControlName]="question.key" [value]="opt.key" ng-checked="true"> {{opt.value}}
       </div>
     </div>
 
     <!-- Type 2: Number Input Textbox (Anima)-->
     <div *ngSwitchCase="'textbox'">
-      <input [formControlName]="question.key" [id]="question.key" [type]="question.type">
+      <input [formControlName]="question.key" [id]="question.key" [type]="question.type" [value]="question.default">
     </div>
 
     <!-- Type 3: Character Selector (Mech Prime) -->

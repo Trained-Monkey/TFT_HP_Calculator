@@ -7,6 +7,7 @@ export class ModifierBase<T> {
   controlType: string;
   type: string;
   options: {key: string, value: string}[];
+  default: T|undefined;
 
   constructor(options: {
       value?: T;
@@ -17,6 +18,7 @@ export class ModifierBase<T> {
       controlType?: string;
       type?: string;
       options?: {key: string, value: string}[];
+      default?: T;
     } = {}) {
     this.value = options.value;
     this.key = options.key || '';
@@ -26,5 +28,6 @@ export class ModifierBase<T> {
     this.controlType = options.controlType || '';
     this.type = options.type || '';
     this.options = options.options || [];
+    this.default = options.default || undefined;
   }
 }

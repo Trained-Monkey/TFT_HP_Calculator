@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
 import { ModifierBase } from './modifier-base';
@@ -13,6 +13,7 @@ import { ModifierControlService } from '../../services/modifier-control.service'
 export class DynamicFormComponent implements OnInit, OnChanges {
 
   @Input() questions: ModifierBase<string>[] | null = [];
+  @Output() formSubmit = new EventEmitter<FormGroup>();
   form!: FormGroup;
   payLoad = '';
 
@@ -21,13 +22,20 @@ export class DynamicFormComponent implements OnInit, OnChanges {
   ngOnInit() {
     // Rerun this line of code when something changes in the form group
     this.form = this.qcs.toFormGroup(this.questions as ModifierBase<string>[]);
+    this.form.valueChanges.subscribe(x => {
+      this.onSubmit();
+    })
   }
 
   ngOnChanges(){
     this.form = this.qcs.toFormGroup(this.questions as ModifierBase<string>[]);
+    this.form.valueChanges.subscribe(x => {
+      this.onSubmit();
+    })
   }
 
   onSubmit() {
-    this.payLoad = JSON.stringify(this.form.getRawValue());
+    // Emit result to parent through output
+    this.formSubmit.emit(this.form);
   }
 }

@@ -1,5 +1,8 @@
-import { Component, Input, OnChanges } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+
+import { EventEmitter } from '@angular/core';
+import { Output } from '@angular/core';
 
 import { ModifierBase } from './modifier-base';
 
@@ -10,5 +13,11 @@ import { ModifierBase } from './modifier-base';
 export class DynamicFormQuestionComponent {
   @Input() question!: ModifierBase<string>;
   @Input() form!: FormGroup;
+  @Output() formUpdate = new EventEmitter<void>();
+
   get isValid() { return this.form.controls[this.question.key].valid; }
+
+  callParent(): void {
+    this.formUpdate.next();
+  }
 }

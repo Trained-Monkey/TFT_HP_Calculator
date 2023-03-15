@@ -26,7 +26,8 @@ export class ModifierService {
           {key: '2',  value: '2'},
           {key: '3',  value: '3'}
         ],
-        order: 3
+        order: 3,
+        default: '0'
       }),
 
       new RadioModifier({
@@ -38,7 +39,8 @@ export class ModifierService {
           {key: '4',  value: '4'},
           {key: '6',  value: '6'}
         ],
-        order: 3
+        order: 3,
+        default: '0'
       }),
 
       new RadioModifier({
@@ -50,7 +52,8 @@ export class ModifierService {
           {key: '4',  value: '4'},
           {key: '6',  value: '6'}
         ],
-        order: 3
+        order: 3,
+        default: '0'
       }),
     ];
 
@@ -59,6 +62,7 @@ export class ModifierService {
 
   // Take in champion and items
   // Give out updates list of modifiers
+  // Need to also receive modifiers to get updated values
   getNewQuestions(champ: Champion, items: Item[]) {
     // Reset updated questions
     this.updatedQuestions = [
@@ -70,7 +74,8 @@ export class ModifierService {
           {key: '2',  value: '2'},
           {key: '3',  value: '3'}
         ],
-        order: 3
+        order: 3,
+        default: '0'
       }),
 
       new RadioModifier({
@@ -82,7 +87,8 @@ export class ModifierService {
           {key: '4',  value: '4'},
           {key: '6',  value: '6'}
         ],
-        order: 3
+        order: 3,
+        default: '0'
       }),
 
       new RadioModifier({
@@ -94,7 +100,8 @@ export class ModifierService {
           {key: '4',  value: '4'},
           {key: '6',  value: '6'}
         ],
-        order: 3
+        order: 3,
+        default: '0'
       }),
     ];
 
@@ -111,7 +118,8 @@ export class ModifierService {
             {key: '6',  value: '6'},
             {key: '8',  value: '8'}
           ],
-          order: 3
+          order: 3,
+          default: '0'
         })
       )
     }
@@ -122,13 +130,13 @@ export class ModifierService {
         new TextboxModifier({
           key: 'anima',
           label: 'Anima: ',
-          order: 3
+          order: 3,
+          default: '100'
         })
       )
     }
 
     // Mech
-    console.log(this.updatedQuestions);
     return of(this.updatedQuestions.sort((a, b) => a.order - b.order));
   }
 

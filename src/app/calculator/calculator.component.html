@@ -30,7 +30,7 @@
     </div>
     <div class="modifierContainer">
       <!-- Remove repetition through ngFor? -->
-      <app-dynamic-form [questions]="questions$ | async"></app-dynamic-form>
+      <app-dynamic-form [questions]="questions$ | async" (formSubmit)="receiveModifiers($event)"></app-dynamic-form>
 
       <!-- <div class="modifierText">
         <div> Star Level: </div>
