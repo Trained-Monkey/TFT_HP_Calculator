@@ -7,6 +7,8 @@ import { of } from 'rxjs';
 import { Champion, Item } from '../interfaces/interfaces';
 import { ItemDataService } from './itemData.service';
 import { TextboxModifier } from '../component/modifiers/modifier-textbox';
+import { CheckboxModifier } from '../component/modifiers/modifier-checkbox';
+import { FormGroup } from '@angular/forms';
 
 // Service to retrieve actual list of possible modifiers, determines modifiers to show/return
 // by being notified.
@@ -27,7 +29,7 @@ export class ModifierService {
           {key: '3',  value: '3'}
         ],
         order: 3,
-        default: '0'
+        default: '1'
       }),
 
       new RadioModifier({
@@ -54,6 +56,24 @@ export class ModifierService {
         ],
         order: 3,
         default: '0'
+      }),
+
+      new CheckboxModifier({
+        key: 'ionic',
+        label: 'Ionic: ',
+        options: [
+          {key: '0',  value: 'true'},
+        ],
+        order: 3,
+      }),
+
+      new CheckboxModifier({
+        key: 'lastWhisper',
+        label: 'Last Whisper: ',
+        options: [
+          {key: '0',  value: 'true'},
+        ],
+        order: 3,
       }),
     ];
 
@@ -63,10 +83,11 @@ export class ModifierService {
   // Take in champion and items
   // Give out updates list of modifiers
   // Need to also receive modifiers to get updated values
-  getNewQuestions(champ: Champion, items: Item[]) {
+  getNewQuestions(champ: Champion, items: Item[], modifiers: FormGroup) {
     // Reset updated questions
     this.updatedQuestions = [
       new RadioModifier({
+        value: modifiers.value.star,
         key: 'star',
         label: 'Star Level: ',
         options: [
@@ -75,10 +96,11 @@ export class ModifierService {
           {key: '3',  value: '3'}
         ],
         order: 3,
-        default: '0'
+        default: '1'
       }),
 
       new RadioModifier({
+        value: modifiers.value.defender,
         key: 'defender',
         label: 'Defender: ',
         options: [
@@ -92,6 +114,7 @@ export class ModifierService {
       }),
 
       new RadioModifier({
+        value: modifiers.value.aegis,
         key: 'aegis',
         label: 'Aegis: ',
         options: [
@@ -103,12 +126,33 @@ export class ModifierService {
         order: 3,
         default: '0'
       }),
+
+      new CheckboxModifier({
+        value: modifiers.value.ionic,
+        key: 'ionic',
+        label: 'Ionic: ',
+        options: [
+          {key: '0',  value: 'true'},
+        ],
+        order: 3,
+      }),
+
+      new CheckboxModifier({
+        value: modifiers.value.lastWhisper,
+        key: 'lastWhisper',
+        label: 'Last Whisper: ',
+        options: [
+          {key: '0',  value: 'true'},
+        ],
+        order: 3,
+      }),
     ];
 
     // Brawler
     if (this.isBrawler(champ, items)){
       this.updatedQuestions.push(
         new RadioModifier({
+          value: modifiers.value.brawler,
           key: 'brawler',
           label: 'Brawler: ',
           options: [
@@ -128,10 +172,11 @@ export class ModifierService {
     if (this.isAnima(champ, items)){
       this.updatedQuestions.push(
         new TextboxModifier({
+          value: modifiers.value.anima,
           key: 'anima',
           label: 'Anima: ',
           order: 3,
-          default: '100'
+          default: '0'
         })
       )
     }

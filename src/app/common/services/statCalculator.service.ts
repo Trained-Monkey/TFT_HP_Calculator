@@ -25,7 +25,6 @@ export class StatCalculatorService {
       armour: 0,
       magicResist: 0
     }
-
     result = this.addChampionStat(result, champion, modifiers.star);
 
     for (let i = 0; i < items.length; i++){
@@ -34,6 +33,7 @@ export class StatCalculatorService {
     }
 
     // Handle modifiers
+
     if (champion)
     {
       result = this.modifierCalculator.calculateStats(champion, items, modifiers, result);

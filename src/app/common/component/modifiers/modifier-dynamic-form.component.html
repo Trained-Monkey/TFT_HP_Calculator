@@ -1,6 +1,6 @@
 <div>
-  <form (ngSubmit)="onSubmit()" [formGroup]="form" (formUpdate)="onSubmit()">
-    <div *ngFor="let question of questions" class="form-row">
+  <form (ngSubmit)="onSubmit()" [formGroup]="form" (formUpdate)="onSubmit()" class="modifierInput">
+    <div *ngFor="let question of questions; trackBy: trackByFn" class="form-row">
       <app-question [question]="question" [form]="form"></app-question>
     </div>
   </form>

@@ -75,8 +75,6 @@ export class CalculatorComponent {
     this.mergeOption = graphGeneratorService.mergeOption;
     this.loading = graphGeneratorService.loading;
 
-
-
     this.statCalculatorService.PHPGrowth.subscribe({
       next: (v: Stats) => {this.PHPGrowthArmour = v.armour; this.PHPGrowthHealth = v.health}
     })
@@ -89,13 +87,11 @@ export class CalculatorComponent {
     this.itemImagePaths = ['', '', ''];
 
     this.questions$ = modifierService.getQuestions();
-
   }
 
   receiveModifiers(form: FormGroup){
     this.statModifiers = form;
-    // this.statModifiers.valueChanges.subscribe(() => this.refreshData());
-    // this.refreshData();
+    this.statModifiers.valueChanges.subscribe(() => this.refreshData());
   }
 
   selectChampion(champion: Champion): void {
@@ -120,19 +116,18 @@ export class CalculatorComponent {
   }
 
   refreshData() : void {
-    this.questions$ = this.modifierService.getNewQuestions(this.selectedChampion, this.selectedItems);
+    this.questions$ = this.modifierService.getNewQuestions(this.selectedChampion, this.selectedItems, this.statModifiers);
+    // May need to call child component to get new info.
 
     let modifiers: Modifiers = {
       star: this.statModifiers.value.star,
       defender: this.statModifiers.value.defender,
       aegis: this.statModifiers.value.aegis,
-      anima: 0,
-      brawler: 0,
-      // mech: []
-      // ionic
-      // lastwhisper
+      anima: this.statModifiers.value.anima,
+      brawler: this.statModifiers.value.brawler,
+      ionic: this.statModifiers.value.ionic,
+      lastWhisper: this.statModifiers.value.lastWhisper
     }
-
     this.stats = this.statCalculatorService.calculateStats(this.selectedChampion, this.selectedItems, modifiers);
 
     // Update our graph

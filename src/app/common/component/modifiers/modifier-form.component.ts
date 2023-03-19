@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
 import { EventEmitter } from '@angular/core';
@@ -8,7 +8,8 @@ import { ModifierBase } from './modifier-base';
 
 @Component({
   selector: 'app-question',
-  templateUrl: './modifier-form.component.html'
+  templateUrl: './modifier-form.component.html',
+  styleUrls: ['../../../calculator/calculator.component.css']
 })
 export class DynamicFormQuestionComponent {
   @Input() question!: ModifierBase<string>;

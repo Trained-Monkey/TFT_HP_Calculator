@@ -1,22 +1,27 @@
-<div [formGroup]="form">
+<div [formGroup]="form" >
   <label [attr.for]="question.key">{{question.label}}</label>
 
-  <div [ngSwitch]="question.controlType">
+  <div [ngSwitch]="question.controlType" class="modifier">
     <!-- Type 1: Basic Radio Checkbox (Brawler)-->
-    <div *ngSwitchCase="'radio'" >
+    <div *ngSwitchCase="'radio'" class="modifierForm">
       <div *ngFor="let opt of question.options" >
         <input type="radio" [formControlName]="question.key" [value]="opt.key" ng-checked="true"> {{opt.value}}
       </div>
     </div>
 
     <!-- Type 2: Number Input Textbox (Anima)-->
-    <div *ngSwitchCase="'textbox'">
-      <input [formControlName]="question.key" [id]="question.key" [type]="question.type" [value]="question.default">
+    <div *ngSwitchCase="'textbox'" class="modifierForm">
+      <input [formControlName]="question.key" [id]="question.key" [type]="question.type" [value]="question.default" >
     </div>
 
     <!-- Type 3: Character Selector (Mech Prime) -->
-    <div *ngSwitchCase="'unitSelector'">
+    <div *ngSwitchCase="'unitSelector'" class="modifierForm">
 
+    </div>
+
+    <!-- Type 4: Checkboxes (Ionic, Last Whisper, Morgana Shred) -->
+    <div *ngSwitchCase="'checkbox'" class="modifierForm">
+      <input type="checkbox" [formControlName]="question.key" [id]="question.key" value="Bike">
     </div>
   </div>
 </div>

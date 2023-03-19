@@ -29,19 +29,18 @@ export interface Modifiers {
   star: number;
   defender: number;
   aegis: number;
-  brawler: number;
-  anima: number;
+  brawler?: number;
+  anima?: number;
   // mech: [string] | null;
-  // ionic: boolean;
-  // lastwhisper: boolean;
+  ionic?: boolean;
+  lastWhisper?: boolean;
 }
-
 
 export enum Class {
   Sureshot,
-  Defender = "Defender",
-  Brawler = "Brawler",
-  Aegis = "Aegis",
+  Defender = "defender",
+  Brawler = "brawler",
+  Aegis = "aegis",
   // Prankster,
   // Mascot,
   // Hacker,

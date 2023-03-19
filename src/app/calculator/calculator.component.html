@@ -29,52 +29,7 @@
 
     </div>
     <div class="modifierContainer">
-      <!-- Remove repetition through ngFor? -->
       <app-dynamic-form [questions]="questions$ | async" (formSubmit)="receiveModifiers($event)"></app-dynamic-form>
-
-      <!-- <div class="modifierText">
-        <div> Star Level: </div>
-        <div> Defender: </div>
-        <div> Aegis: </div>
-        <div> Brawler: </div>
-      </div>
-
-      <div class="modifierInput">
-        <div class="modifier">
-          <form [formGroup]="statModifiers" class="modifierForm">
-            <div *ngFor="let level of [1, 2, 3]" >
-              <input  type="radio" formControlName="star" [value]="level"> {{level}}
-            </div>
-          </form>
-        </div>
-
-        <div class="modifier">
-          <form [formGroup]="statModifiers" class="modifierForm">
-            <div *ngFor="let level of [0, 2, 4, 6]" >
-              <input  type="radio" formControlName="defender" [value]="level"> {{level}}
-            </div>
-          </form>
-        </div>
-
-        <div class="modifier">
-          <form [formGroup]="statModifiers" class="modifierForm">
-            <div *ngFor="let level of [0, 2, 4, 6]" >
-              <input  type="radio" formControlName="aegis" [value]="level"> {{level}}
-            </div>
-          </form>
-        </div>
-
-        <div class="modifier">
-          <form [formGroup]="statModifiers" class="modifierForm">
-            <div *ngFor="let level of [0, 2, 4, 6, 8]" >
-              <input  type="radio" formControlName="brawler" [value]="level"> {{level}}
-            </div>
-          </form>
-        </div>
-
-      </div> -->
-
-
     </div>
   </div>
   <div class="displayContainer">
