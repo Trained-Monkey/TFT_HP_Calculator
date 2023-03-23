@@ -31,11 +31,10 @@ export class DynamicFormComponent implements OnInit, OnChanges {
   // We want this to run every time a new modifier is changed, not when a new value is changed
   ngOnChanges(){
 
-    let newForm = this.qcs.toFormGroupPreserveValues(this.form, this.questions as ModifierBase<string>[]);
+    let newForm = this.qcs.toFormGroup(this.questions as ModifierBase<string>[]);
 
     if (this.detectChange(this.form, newForm)){
       this.form = newForm;
-      console.log("New modifiers added/removed.");
 
       this.onSubmit();
     }

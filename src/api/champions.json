@@ -77,7 +77,7 @@
     "image": "draven.png",
     "armour": 30,
     "magicResist": 30,
-    "class": []
+    "class": ["mech"]
   },
   {
     "name": "Ekko",

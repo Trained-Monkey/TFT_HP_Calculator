@@ -13,8 +13,7 @@ import { ModifierCalculator } from "./modifierCalculator.service";
 export class StatCalculatorService {
   aegisMap = new Map();
 
-  PHPGrowth = new Subject<Stats>();
-  MHPGrowth = new Subject<Stats>();
+  finalisedStats = new Subject<Stats>();
 
   constructor(private modifierCalculator: ModifierCalculator) {
   }
@@ -23,7 +22,13 @@ export class StatCalculatorService {
     let result: Stats = {
       health: 0,
       armour: 0,
-      magicResist: 0
+      magicResist: 0,
+      PHP: 0,
+      PHPGrowthArmour: 0,
+      PHPGrowthHealth: 0,
+      MHP: 0,
+      MHPGrowthResist: 0,
+      MHPGrowthHealth: 0
     }
     result = this.addChampionStat(result, champion, modifiers.star);
 
@@ -39,8 +44,7 @@ export class StatCalculatorService {
       result = this.modifierCalculator.calculateStats(champion, items, modifiers, result);
     }
 
-    this.PHPGrowth.next(this.calculatePHPGrowth(result));
-    this.MHPGrowth.next(this.calculateMHPGrowth(result));
+    this.finalisedStats.next(this.calculateGrowth(result));
 
     return result;
   }
@@ -66,21 +70,19 @@ export class StatCalculatorService {
     return curr;
   }
 
-  private calculatePHPGrowth(stat: Stats): Stats {
+  private calculateGrowth(stat: Stats): Stats {
     var result: Stats = {
-      health: 1 + stat.armour/100,
-      armour: stat.health/100,
-      magicResist: 0
-    }
+      health: stat.health,
+      magicResist: stat.magicResist,
+      armour: stat.armour,
 
-    return result;
-  }
+      PHP: stat.health * (1 + stat.armour/100),
+      PHPGrowthArmour: stat.health/100,
+      PHPGrowthHealth: 1 + stat.armour/100,
 
-  private calculateMHPGrowth(stat: Stats): Stats {
-    var result: Stats = {
-      health: 1 + stat.magicResist/100,
-      armour: 0,
-      magicResist: stat.health/100
+      MHP: stat.health * (1 + stat.magicResist/100),
+      MHPGrowthResist: stat.health/100,
+      MHPGrowthHealth: 1 + stat.magicResist / 100
     }
 
     return result;

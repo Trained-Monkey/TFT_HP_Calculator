@@ -23,6 +23,12 @@ export interface Stats {
   health: number;
   armour: number;
   magicResist: number;
+  PHP: number;
+  PHPGrowthArmour: number;
+  PHPGrowthHealth: number;
+  MHP: number;
+  MHPGrowthResist: number;
+  MHPGrowthHealth: number;
 }
 
 export interface Modifiers {
@@ -31,9 +37,11 @@ export interface Modifiers {
   aegis: number;
   brawler?: number;
   anima?: number;
-  // mech: [string] | null;
   ionic?: boolean;
   lastWhisper?: boolean;
+  gargoyle?: number;
+  mech1?: string;
+  mech2?: string;
 }
 
 export enum Class {
@@ -41,6 +49,7 @@ export enum Class {
   Defender = "defender",
   Brawler = "brawler",
   Aegis = "aegis",
+  Mech = "mech"
   // Prankster,
   // Mascot,
   // Hacker,

@@ -55,9 +55,13 @@ export class GraphGeneratorService{
 
   // Generates data to show graphically, modifier represents the armor/mr stat
   // Move into a service
-  generateData(modifier: number) : number[] {
+  generateData(modifier: number, hp: number = 0) : number[] {
     var data = [];
-    for (var i: number = 0; i < 2000; i+=10){
+    let base = 2000;
+    hp += 1000;
+    base = hp > base? hp : base;
+
+    for (var i: number = 0; i < base; i+=10){
       data.push([i, i + i * modifier / 100]);
     }
 
@@ -69,7 +73,7 @@ export class GraphGeneratorService{
     var flattenedData = [stats.armour, stats.magicResist];
 
     // Convert stats into effective HP data and format it for echarts
-    updatedData = flattenedData.map((x) => ({['data']: this.generateData(x)}));
+    updatedData = flattenedData.map((x) => ({['data']: this.generateData(x, stats.health)}));
 
     this.mergeOption = {series: updatedData}
     return this.mergeOption

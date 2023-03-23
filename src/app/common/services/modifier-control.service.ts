@@ -10,26 +10,35 @@ export class ModifierControlService {
     const group: any = {};
     console.log(questions)
     questions.forEach(question => {
-      group[question.key] = question.value == undefined ? new FormControl(question.default || '')
-                                              : new FormControl(question.value || '');
-    });
-    return new FormGroup(group);
-  }
+      if(question.key == "mech"){
+        let mechGroup: any = {};
 
-  toFormGroupPreserveValues(form, questions) {
-    const group: any = {};
-    questions.forEach(question => {
-      group[question.key] = question.value == undefined ? new FormControl(question.default || '')
-                                              : new FormControl(question.value || '');
-    });
+        let mech1 = undefined;
+        let mech2 = undefined;
 
-    if (form != undefined){
-      let oldValues = form.getRawValue();
-      for (var prop in oldValues) {
-        console.log(prop);
+        if (question.value != undefined){
+          // Any type cast to remove undefined "mech1" on string
+          let value:any = question.value;
+          mech1 = value.mech1;
+          mech2 = value.mech2;
+        }
+
+        mechGroup["mech1"] = mech1 == undefined ? new FormControl(question.default || '') : new FormControl(mech1 || '');
+        mechGroup["mech2"] = mech2 == undefined ? new FormControl(question.default || '') : new FormControl(mech2 || '');
+        // mechGroup["name"] = "mech";
+        console.log(mech1, mech2);
+
+        group[question.key] = new FormGroup(mechGroup);
       }
-    }
+      else {
+        group[question.key] = question.value == undefined ? new FormControl(question.default || '')
+        : new FormControl(question.value || '');
+      };
+    });
 
-    return new FormGroup(group);
+    let result = new FormGroup(group);
+
+    console.log(result);
+    return result;
   }
 }

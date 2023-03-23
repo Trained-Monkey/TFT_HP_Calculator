@@ -9,13 +9,22 @@
       </div>
     </div>
 
-    <!-- Type 2: Number Input Textbox (Anima)-->
+    <!-- Type 2: Number Input Textbox (Anima, Gargoyle)-->
     <div *ngSwitchCase="'textbox'" class="modifierForm">
       <input [formControlName]="question.key" [id]="question.key" [type]="question.type" [value]="question.default" >
     </div>
 
     <!-- Type 3: Character Selector (Mech Prime) -->
     <div *ngSwitchCase="'unitSelector'" class="modifierForm">
+      <div formGroupName="mech">
+        <select formControlName="mech1" id="mech1">
+          <option *ngFor="let opt of question.options" [value]="opt.key" >{{opt.value}}</option>
+        </select>
+
+        <select formControlName="mech2" id="mech2">
+          <option *ngFor="let opt of question.options" [value]="opt.key" >{{opt.value}}</option>
+        </select>
+      </div>
 
     </div>
 

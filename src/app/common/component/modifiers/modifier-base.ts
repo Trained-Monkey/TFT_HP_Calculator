@@ -8,6 +8,7 @@ export class ModifierBase<T> {
   type: string;
   options: {key: string, value: string}[];
   default: T|undefined;
+  child: ModifierBase<T>[]|undefined;
 
   constructor(options: {
       value?: T;
@@ -19,6 +20,7 @@ export class ModifierBase<T> {
       type?: string;
       options?: {key: string, value: string}[];
       default?: T;
+      child?: ModifierBase<T>[];
     } = {}) {
     this.value = options.value;
     this.key = options.key || '';
@@ -29,5 +31,6 @@ export class ModifierBase<T> {
     this.type = options.type || '';
     this.options = options.options || [];
     this.default = options.default || undefined;
+    this.child = options.child || undefined;
   }
 }

@@ -9,6 +9,7 @@ import { ItemDataService } from './itemData.service';
 import { TextboxModifier } from '../component/modifiers/modifier-textbox';
 import { CheckboxModifier } from '../component/modifiers/modifier-checkbox';
 import { FormGroup } from '@angular/forms';
+import { UnitSelectorModifier } from '../component/modifiers/modifier-unitSelector';
 
 // Service to retrieve actual list of possible modifiers, determines modifiers to show/return
 // by being notified.
@@ -168,7 +169,7 @@ export class ModifierService {
       )
     }
 
-    // // Anima
+    // Anima
     if (this.isAnima(champ, items)){
       this.updatedQuestions.push(
         new TextboxModifier({
@@ -181,7 +182,38 @@ export class ModifierService {
       )
     }
 
+    // Gargoyle
+    if (this.isGargoyle(champ, items)){
+      this.updatedQuestions.push(
+        new TextboxModifier({
+          value: modifiers.value.gargoyle,
+          key: 'gargoyle',
+          label: 'Gargoyle Targets: ',
+          order: 3,
+          default: '0'
+        })
+      )
+    }
+
     // Mech
+    if (this.isMech(champ, items)){
+      this.updatedQuestions.push(
+        new UnitSelectorModifier({
+          value: modifiers.value.mech,
+          key: 'mech',
+          label: 'Units eaten: ',
+          order: 3,
+          child: [],
+          options: [
+            {key: 'Jax',  value: 'Jax'},
+            {key: 'Draven',  value: 'Draven'},
+            {key: 'Leona',  value: 'Leona'},
+            {key: 'Wukong',  value: 'Wukong'}
+          ],
+          default: 'Jax'
+        })
+      )
+    }
     return of(this.updatedQuestions.sort((a, b) => a.order - b.order));
   }
 
@@ -195,14 +227,7 @@ export class ModifierService {
       }
     }
 
-    // Check emblem in item list
-    for (let i = 0; i < items.length; i++){
-      if (items[i] != null && items[i].name == "BrawlerEmblemItem"){
-        return true;
-      }
-    }
-
-    return false;
+    return this.containsItem(items, "BrawlerEmblemItem");
   }
 
   isAnima(champ: Champion, items: Item[]): boolean {
@@ -215,19 +240,30 @@ export class ModifierService {
       }
     }
 
-    // Check emblem in item list
-    for (let i = 0; i < items.length; i++){
-      if (items[i] != null && items[i].name == "AnimaEmblemItem"){
-        return true;
-      }
-    }
-    return false;
+    return this.containsItem(items, "AnimaEmblemItem");
   }
 
   isMech(champ: Champion, items: Item[]): boolean {
-    // Check champ
+    if (champ != null){
+      for (let i = 0; i < champ.class.length; i++){
+        if (champ.class[i] == "mech"){
+          return true;
+        }
+      }
+    }
+    return this.containsItem(items, "MechEmblemItem");
+  }
 
-    // Check emblem in item list
+  isGargoyle(champ: Champion, items: Item[]): boolean {
+    return this.containsItem(items, "Gargoyle Stoneplate");
+  }
+
+  containsItem(items: Item[], name: String): boolean {
+    for (let i = 0; i < items.length; i++){
+      if (items[i] != null && items[i].name == name){
+        return true;
+      }
+    }
     return false;
   }
 }

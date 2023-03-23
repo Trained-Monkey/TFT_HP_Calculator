@@ -48,15 +48,25 @@ export class CalculatorComponent {
   stats: Stats = {
     health: 0,
     armour: 0,
-    magicResist: 0
+    magicResist: 0,
+    PHP: 0,
+    PHPGrowthArmour: 0,
+    PHPGrowthHealth: 0,
+    MHP: 0,
+    MHPGrowthResist: 0,
+    MHPGrowthHealth: 0
   };
+
   theme: string | ThemeOption = dark;
 
   PHPGrowthArmour: number;
   PHPGrowthHealth: number;
+  PHP: number;
 
   MHPGrowthMagicResist: number;
   MHPGrowthHealth: number;
+  MHP: number;
+
   questions$: Observable<ModifierBase<string>[]>;
   payload: string;
 
@@ -75,12 +85,16 @@ export class CalculatorComponent {
     this.mergeOption = graphGeneratorService.mergeOption;
     this.loading = graphGeneratorService.loading;
 
-    this.statCalculatorService.PHPGrowth.subscribe({
-      next: (v: Stats) => {this.PHPGrowthArmour = v.armour; this.PHPGrowthHealth = v.health}
-    })
+    this.statCalculatorService.finalisedStats.subscribe({
+      next: (v: Stats) => {
+        this.PHPGrowthArmour = v.PHPGrowthArmour;
+        this.PHPGrowthHealth = v.PHPGrowthHealth;
+        this.PHP = v.PHP;
 
-    this.statCalculatorService.MHPGrowth.subscribe({
-      next: (v: Stats) => {this.MHPGrowthMagicResist = v.magicResist; this.MHPGrowthHealth = v.health}
+        this.MHPGrowthMagicResist = v.MHPGrowthResist;
+        this.MHPGrowthHealth = v.MHPGrowthHealth;
+        this.MHP = v.MHP;
+      }
     })
 
     this.selectedItems = [null, null, null];
@@ -126,8 +140,12 @@ export class CalculatorComponent {
       anima: this.statModifiers.value.anima,
       brawler: this.statModifiers.value.brawler,
       ionic: this.statModifiers.value.ionic,
-      lastWhisper: this.statModifiers.value.lastWhisper
+      lastWhisper: this.statModifiers.value.lastWhisper,
+      gargoyle: this.statModifiers.value.gargoyle,
+      mech1: this.statModifiers.value.mech1,
+      mech2: this.statModifiers.value.mech2
     }
+
     this.stats = this.statCalculatorService.calculateStats(this.selectedChampion, this.selectedItems, modifiers);
 
     // Update our graph
