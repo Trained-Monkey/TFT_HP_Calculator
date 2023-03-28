@@ -4,7 +4,7 @@ import { ModifierBase } from '../component/modifiers/modifier-base';
 import { RadioModifier } from '../component/modifiers/modifier-radio';
 
 import { of } from 'rxjs';
-import { Champion, Item } from '../interfaces/interfaces';
+import { Champion, Class, EmblemItem, Item } from '../interfaces/interfaces';
 import { ItemDataService } from './itemData.service';
 import { TextboxModifier } from '../component/modifiers/modifier-textbox';
 import { CheckboxModifier } from '../component/modifiers/modifier-checkbox';
@@ -52,8 +52,9 @@ export class ModifierService {
         options: [
           {key: '0',  value: '0'},
           {key: '2',  value: '2'},
+          {key: '3',  value: '3'},
           {key: '4',  value: '4'},
-          {key: '6',  value: '6'}
+          {key: '5',  value: '5'}
         ],
         order: 3,
         default: '0'
@@ -121,8 +122,9 @@ export class ModifierService {
         options: [
           {key: '0',  value: '0'},
           {key: '2',  value: '2'},
+          {key: '3',  value: '3'},
           {key: '4',  value: '4'},
-          {key: '6',  value: '6'}
+          {key: '5',  value: '5'}
         ],
         order: 3,
         default: '0'
@@ -148,6 +150,24 @@ export class ModifierService {
         order: 3,
       }),
     ];
+
+    if (this.isOxForce(champ, items)){
+      this.updatedQuestions.push(
+        new RadioModifier({
+          value: modifiers.value.oxforce,
+          key: 'oxforce',
+          label: 'OxForce: ',
+          options: [
+            {key: '0',  value: '0'},
+            {key: '2',  value: '2'},
+            {key: '4',  value: '4'},
+            {key: '6',  value: '6'},
+          ],
+          order: 3,
+          default: '0'
+        })
+      )
+    }
 
     // Brawler
     if (this.isBrawler(champ, items)){
@@ -217,41 +237,54 @@ export class ModifierService {
     return of(this.updatedQuestions.sort((a, b) => a.order - b.order));
   }
 
-  isBrawler(champ: Champion, items: Item[]): boolean {
+  isOxForce(champ: Champion, items: Item[]): boolean {
     // Check champ
     if (champ != null){
       for (let i = 0; i < champ.class.length; i++){
-        if (champ.class[i] == "brawler"){
+        if (champ.class[i].includes(Class.OxForce)){
           return true;
         }
       }
     }
 
-    return this.containsItem(items, "BrawlerEmblemItem");
+    return this.containsItem(items, EmblemItem.OxForce);
+  }
+
+  isBrawler(champ: Champion, items: Item[]): boolean {
+    // Check champ
+    if (champ != null){
+      for (let i = 0; i < champ.class.length; i++){
+        if (champ.class[i].includes(Class.Brawler)){
+          return true;
+        }
+      }
+    }
+
+    return this.containsItem(items, EmblemItem.Brawler);
   }
 
   isAnima(champ: Champion, items: Item[]): boolean {
     // Check champ
     if (champ != null){
       for (let i = 0; i < champ.class.length; i++){
-        if (champ.class[i] == "anima"){
+        if (champ.class[i].includes(Class.Anima)){
           return true;
         }
       }
     }
 
-    return this.containsItem(items, "AnimaEmblemItem");
+    return this.containsItem(items, EmblemItem.Anima);
   }
 
   isMech(champ: Champion, items: Item[]): boolean {
     if (champ != null){
       for (let i = 0; i < champ.class.length; i++){
-        if (champ.class[i] == "mech"){
+        if (champ.class[i].includes(Class.Mech)){
           return true;
         }
       }
     }
-    return this.containsItem(items, "MechEmblemItem");
+    return this.containsItem(items, EmblemItem.Mech);
   }
 
   isGargoyle(champ: Champion, items: Item[]): boolean {

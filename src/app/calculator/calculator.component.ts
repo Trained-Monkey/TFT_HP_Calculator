@@ -143,8 +143,10 @@ export class CalculatorComponent {
       lastWhisper: this.statModifiers.value.lastWhisper,
       gargoyle: this.statModifiers.value.gargoyle,
       mech1: this.statModifiers.value.mech1,
-      mech2: this.statModifiers.value.mech2
+      mech2: this.statModifiers.value.mech2,
+      oxforce: this.statModifiers.value.oxforce
     }
+    console.log(modifiers);
 
     this.stats = this.statCalculatorService.calculateStats(this.selectedChampion, this.selectedItems, modifiers);
 

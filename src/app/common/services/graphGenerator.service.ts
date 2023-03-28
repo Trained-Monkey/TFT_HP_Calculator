@@ -46,9 +46,22 @@ export class GraphGeneratorService{
         clip: true,
         type: 'line',
         name: 'Effective Magical HP'
+      },
+      {
+        clip: true,
+        type: 'line',
+      },
+      {
+        clip: true,
+        type: 'line',
       }
     ],
   };
+
+  /*
+   * markPoint does not seem to work
+   */
+
 
   mergeOption: any;
   loading = false;
@@ -58,15 +71,20 @@ export class GraphGeneratorService{
   generateData(modifier: number, hp: number = 0) : number[] {
     var data = [];
     let base = 2000;
-    hp += 1000;
-    base = hp > base? hp : base;
-
-    for (var i: number = 0; i < base; i+=10){
-      data.push([i, i + i * modifier / 100]);
-    }
+    base = hp > base? hp + 1000 : base;
+    data.push([0, 0]);
+    data.push([base, base + base * modifier/ 100]);
 
     return data;
   }
+
+  getPoint(modifier: number, hp: number = 0) : number[] {
+    var data = [];
+    data.push([hp, hp + hp * modifier/100]);
+
+    return data;
+  }
+
 
   updateData(stats: Stats) {
     var updatedData = [];
@@ -74,6 +92,7 @@ export class GraphGeneratorService{
 
     // Convert stats into effective HP data and format it for echarts
     updatedData = flattenedData.map((x) => ({['data']: this.generateData(x, stats.health)}));
+    updatedData.push(...flattenedData.map((x) => ({['data']: this.getPoint(x, stats.health)})));
 
     this.mergeOption = {series: updatedData}
     return this.mergeOption

@@ -25,8 +25,6 @@ export class ModifierControlService {
 
         mechGroup["mech1"] = mech1 == undefined ? new FormControl(question.default || '') : new FormControl(mech1 || '');
         mechGroup["mech2"] = mech2 == undefined ? new FormControl(question.default || '') : new FormControl(mech2 || '');
-        // mechGroup["name"] = "mech";
-        console.log(mech1, mech2);
 
         group[question.key] = new FormGroup(mechGroup);
       }
@@ -38,7 +36,6 @@ export class ModifierControlService {
 
     let result = new FormGroup(group);
 
-    console.log(result);
     return result;
   }
 }

@@ -40,16 +40,19 @@ export interface Modifiers {
   ionic?: boolean;
   lastWhisper?: boolean;
   gargoyle?: number;
+  oxforce?: number;
   mech1?: string;
   mech2?: string;
 }
 
 export enum Class {
   Sureshot,
-  Defender = "defender",
-  Brawler = "brawler",
-  Aegis = "aegis",
-  Mech = "mech"
+  Defender = "Defender",
+  Brawler = "Brawler",
+  Aegis = "Aegis",
+  Mech = "Mech",
+  Anima = "Anima",
+  OxForce = "OxForce"
   // Prankster,
   // Mascot,
   // Hacker,
@@ -57,11 +60,12 @@ export enum Class {
   // Renegade
 }
 
-export enum Origin {
-  Admin,
-  OxForce,
-  Gadgeteen,
-  Civillian,
-  Threat,
-  AnimaSquad = "AnimaSquad",
+export enum EmblemItem {
+  Anima = "AnimaEmblemItem",
+  Brawler = "BrawlerEmblemItem",
+  Mech = "MechEmblemItem",
+  OxForce = "OxForceEmblemItem",
+  Defender = "DefenderEmblemItem",
+  Aegis = "AegisEmblemItem"
+
 }

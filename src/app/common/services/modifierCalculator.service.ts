@@ -1,12 +1,12 @@
 import { Injectable } from "@angular/core";
-import { Champion, Stats, Item, Class, Modifiers } from "../interfaces/interfaces";
+import { Champion, Stats, Item, Class, Modifiers, EmblemItem } from "../interfaces/interfaces";
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class ModifierCalculator {
-  modifiers = [new Defender(), new Aegis(), new Anima(), new Mech(), new Brawler(), new Gargoyle(), new Ionic(), new LastWhisper()];
+  modifiers = [new Defender(), new Aegis(), new Anima(), new Mech(), new Brawler(), new Gargoyle(), new OxForce(), new Ionic(), new LastWhisper()];
 
   calculateStats(champion: Champion, items: Item[], modifiers: Modifiers, curr: Stats, ):Stats {
     var results: Stats = curr;
@@ -24,9 +24,9 @@ class Defender {
 
   constructor(){
     this.defenderMap.set('0',[0, 0]);
-    this.defenderMap.set('2',[30, 60]);
-    this.defenderMap.set('4',[50, 80]);
-    this.defenderMap.set('6',[180, 400]);
+    this.defenderMap.set('2',[25, 50]);
+    this.defenderMap.set('4',[75, 150]);
+    this.defenderMap.set('6',[200, 400]);
   }
 
   calculateStat(champion: Champion, items: Item[], modifiers: Modifiers, curr: Stats):Stats {
@@ -42,7 +42,7 @@ class Defender {
   checkDefender(champion: Champion, items: Item[]): number{
     if (champion.class.includes(Class.Defender)) return 1;
     for (var i = 0; i < items.length; i++){
-      if (items[i] != null && items[i].name == "DefenderEmblemItem"){
+      if (items[i] != null && items[i].name == EmblemItem.Defender){
         return 1;
       }
     }
@@ -67,9 +67,10 @@ class Aegis {
 
   constructor(){
     this.aegisMap.set('0',[0, 0]);
-    this.aegisMap.set('2',[30, 60]);
-    this.aegisMap.set('4',[50, 80]);
-    this.aegisMap.set('6',[180, 400]);
+    this.aegisMap.set('2',[20, 40]);
+    this.aegisMap.set('3',[40, 80]);
+    this.aegisMap.set('4',[60, 120]);
+    this.aegisMap.set('5',[90, 180]);
   }
 
   calculateStat(champion: Champion, items: Item[], modifiers: Modifiers, curr: Stats):Stats {
@@ -83,9 +84,10 @@ class Aegis {
   }
 
   checkAegis(champion: Champion, items: Item[]): number{
+    console.log(items);
     if (champion.class.includes(Class.Aegis)) return 1;
     for (var i = 0; i < items.length; i++){
-      if (items[i] != null && items[i].name == "AegisEmblemItem"){
+      if (items[i] != null && items[i].name == EmblemItem.Aegis){
         return 1;
       }
     }
@@ -100,9 +102,9 @@ class Brawler {
   constructor(){
     this.brawlerMap.set('0',[1, 1]);
     this.brawlerMap.set('2',[1, 1.2]);
-    this.brawlerMap.set('4',[1, 1.5]);
+    this.brawlerMap.set('4',[1, 1.45]);
     this.brawlerMap.set('6',[1, 1.7]);
-    this.brawlerMap.set('8',[1, 1.9]);
+    this.brawlerMap.set('8',[1, 2.0]);
 
   }
 
@@ -124,7 +126,7 @@ class Brawler {
   checkBrawler(champion: Champion, items: Item[]): number{
     if (champion.class.includes(Class.Brawler)) return 1;
     for (var i = 0; i < items.length; i++){
-      if (items[i] != null && items[i].name == "BrawlerEmblemItem"){
+      if (items[i] != null && items[i].name == EmblemItem.Brawler){
         return 1;
       }
     }
@@ -151,7 +153,6 @@ class Mech {
     if (modifiers.mech1 == undefined || modifiers.mech2 == undefined){
       return curr;
     }
-    console.log(this.mechMap.get(modifiers.mech1));
     curr.health += this.mechMap.get(modifiers.mech1);
     curr.health += this.mechMap.get(modifiers.mech2);
 
@@ -159,9 +160,10 @@ class Mech {
   }
 
   isMech(champion: Champion, items: Item[]){
+    console.log(champion);
     if (champion.class.includes(Class.Mech)) return 1;
     for (var i = 0; i < items.length; i++){
-      if (items[i] != null && items[i].name == "BrawlerEmblemItem"){
+      if (items[i] != null && items[i].name == EmblemItem.Mech){
         return 1;
       }
     }
@@ -222,6 +224,43 @@ class Gargoyle {
     curr.magicResist += amp;
 
     return curr;
+  }
+}
+
+class OxForce{
+  oxforceMap = new Map();
+  constructor(){
+    this.oxforceMap.set('0', [0, 0]);
+    this.oxforceMap.set('2', [10, 10]);
+    this.oxforceMap.set('4', [40, 40]);
+    this.oxforceMap.set('6', [90, 90]);
+  }
+
+  calculateStat(champion: Champion, items: Item[], modifiers: Modifiers, curr: Stats):Stats {
+    if (modifiers.oxforce == undefined){
+      return curr;
+    }
+
+    var oxforce: number = modifiers.oxforce;
+
+    var index = this.checkOxForce(champion, items);
+    console.log(modifiers);
+
+    curr.armour += this.oxforceMap.get(oxforce)[index];
+    curr.magicResist += this.oxforceMap.get(oxforce)[index];
+
+
+    return curr;
+  }
+
+  checkOxForce(champion: Champion, items: Item[]): number{
+    if (champion.class.includes(Class.OxForce)) return 1;
+    for (var i = 0; i < items.length; i++){
+      if (items[i] != null && items[i].name == EmblemItem.OxForce){
+        return 1;
+      }
+    }
+    return 0;
   }
 }
 
