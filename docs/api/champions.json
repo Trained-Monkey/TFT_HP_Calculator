@@ -1,0 +1,474 @@
+[
+  {
+    "name": "Aatrox",
+    "health": 750,
+    "image": "Aatrox.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["Threat"]
+  },
+  {
+    "name": "Alistar",
+    "health": 750,
+    "image": "Alistar.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["OxForce", "Aegis", "Mascot"]
+  },
+  {
+    "name": "Annie",
+    "health": 750,
+    "image": "Annie.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["OxForce", "Spellslinger"]
+  },
+  {
+    "name": "Ashe",
+    "health": 750,
+    "image": "Ashe.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["Lasercorp", "Sureshot"]
+  },
+  {
+    "name": "Aurelion Sol",
+    "health": 750,
+    "image": "AurelionSol.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["Threat"]
+  },
+  {
+    "name": "Belveth",
+    "health": 750,
+    "image": "Belveth.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["Threat"]
+  },
+  {
+    "name": "Blitzcrank",
+    "health": 750,
+    "image": "Blitzcrank.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["Brawler", "Admin"]
+  },
+  {
+    "name": "Camille",
+    "health": 750,
+    "image": "Camille.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["Admin", "Renegade"]
+  },
+  {
+    "name": "Draven",
+    "health": 750,
+    "image": "Draven.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["Mech", "Ace"]
+  },
+  {
+    "name": "Ekko",
+    "health": 750,
+    "image": "Ekko.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["Prankster", "Aegis", "StarGuardian"]
+  },
+  {
+    "name": "Ezreal",
+    "health": 750,
+    "image": "Ezreal.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["Underground", "Quickdraw", "Parallel"]
+  },
+  {
+    "name": "Ultimate Ezreal",
+    "health": 750,
+    "image": "EzrealFuture.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["InfiniTeam", "Parallel", "Sureshot"]
+  },
+  {
+    "name": "Fiddlesticks",
+    "health": 750,
+    "image": "Fiddlesticks.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["Threat"]
+  },
+  {
+    "name": "Fiora",
+    "health": 750,
+    "image": "Fiora.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["OxForce", "Duelist"]
+  },
+  {
+    "name": "Gangplank",
+    "health": 750,
+    "image": "Gangplank.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["Duelist", "Supers"]
+  },
+  {
+    "name": "Garen",
+    "health": 750,
+    "image": "Garen.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["Mech", "Defender"]
+  },
+  {
+    "name": "Gnar",
+    "health": 750,
+    "image": "GnarBig.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["Prankster", "Gadgeteen"]
+  },
+  {
+    "name": "Janna",
+    "health": 750,
+    "image": "Janna.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["Forecaster", "Spellslinger"]
+  },
+  {
+    "name": "Jax",
+    "health": 750,
+    "image": "Jax.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["Mech", "Brawler"]
+  },
+  {
+    "name": "Jhin",
+    "health": 750,
+    "image": "Jhin.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["Renegade", "Riftwalker"]
+  },
+  {
+    "name": "Jinx",
+    "health": 750,
+    "image": "Jinx.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["Anima", "Prankster"]
+  },
+  {
+    "name": "Kaisa",
+    "health": 750,
+    "image": "Kaisa.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["StarGuardian", "Quickdraw"]
+  },
+  {
+    "name": "Kayle",
+    "health": 750,
+    "image": "Kayle.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["Duelist", "Underground"]
+  },
+  {
+    "name": "Leblanc",
+    "health": 750,
+    "image": "Leblanc.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["Admin", "Spellslinger"]
+  },
+  {
+    "name": "Lee Sin",
+    "health": 750,
+    "image": "LeeSin.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["Brawler", "Heart"]
+  },
+  {
+    "name": "Leona",
+    "health": 750,
+    "image": "Leona.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["Mech", "Aegis"]
+  },
+  {
+    "name": "Lucian",
+    "health": 750,
+    "image": "Lucian.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["InfiniTeam", "Quickdraw"]
+  },
+  {
+    "name": "Lulu",
+    "health": 750,
+    "image": "Lulu.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["Heart", "Gadgeteen"]
+  },
+  {
+    "name": "Lux",
+    "health": 750,
+    "image": "Lux.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["StarGuardian", "Spellslinger"]
+  },
+  {
+    "name": "Malphite",
+    "health": 750,
+    "image": "Malphite.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["Mascot", "Supers"]
+  },
+  {
+    "name": "Miss Fortune",
+    "health": 750,
+    "image": "MissFortune.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["Ace", "Anima", "Quickdraw"]
+  },
+  {
+    "name": "Mordekaiser",
+    "health": 750,
+    "image": "Mordekaiser.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["Ace", "Lasercorp"]
+  },
+  {
+    "name": "Morgana",
+    "health": 750,
+    "image": "Morgana.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["Threat"]
+  },
+  {
+    "name": "Nasus",
+    "health": 750,
+    "image": "Nasus.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["Anima", "Mascot"]
+  },
+  {
+    "name": "Neeko",
+    "health": 750,
+    "image": "Neeko.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["StarGuardian", "Spellslinger"]
+  },
+  {
+    "name": "Nilah",
+    "health": 750,
+    "image": "Nilah.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["Duelist", "StarGuardian"]
+  },
+  {
+    "name": "Nunu",
+    "health": 750,
+    "image": "Nunu.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["Mascot", "Gadgeteen"]
+  },
+  {
+    "name": "Pantheon",
+    "health": 750,
+    "image": "Pantheon.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["Heart", "InfiniTeam"]
+  },
+  {
+    "name": "Poppy",
+    "health": 650,
+    "image": "Poppy.png",
+    "armour": 45,
+    "magicResist": 45,
+    "class": ["Defender", "Gadgeteen"]
+  },
+  {
+    "name": "Pyke",
+    "health": 750,
+    "image": "Pyke.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["Riftwalker", "Hacker"]
+  },
+  {
+    "name": "Rammus",
+    "health": 750,
+    "image": "Rammus.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["Threat"]
+  },
+  {
+    "name": "Rell",
+    "health": 750,
+    "image": "Rell.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["Defender", "StarGuardian"]
+  },
+  {
+    "name": "Renekton",
+    "health": 750,
+    "image": "Renekton.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["Brawler", "Lasercorp"]
+  },
+  {
+    "name": "Riven",
+    "health": 750,
+    "image": "Riven.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["Anima", "Defender", "Brawler"]
+  },
+  {
+    "name": "Samira",
+    "health": 750,
+    "image": "Samira.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["Ace", "Underground", "Sureshot"]
+  },
+  {
+    "name": "Shen",
+    "health": 750,
+    "image": "Shen.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["Defender", "Hacker", "InfiniTeam"]
+  },
+  {
+    "name": "Sivir",
+    "health": 750,
+    "image": "Sivir.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["InfiniTeam", "Sureshot"]
+  },
+  {
+    "name": "Sona",
+    "health": 750,
+    "image": "Sona.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["Heart", "Spellslinger", "Underground"]
+  },
+  {
+    "name": "Sylas",
+    "health": 750,
+    "image": "Sylas.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["Anima", "Renegade"]
+  },
+  {
+    "name": "Syndra",
+    "health": 750,
+    "image": "Syndra.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["StarGuardian", "Heart"]
+  },
+  {
+    "name": "Twisted Fate",
+    "health": 750,
+    "image": "TwistedFate.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["Duelist", "InfiniTeam"]
+  },
+  {
+    "name": "Urgot",
+    "health": 750,
+    "image": "Urgot.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["Threat"]
+  },
+  {
+    "name": "Vayne",
+    "health": 750,
+    "image": "Vayne.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["Duelist", "Anima"]
+  },
+  {
+    "name": "Vex",
+    "health": 750,
+    "image": "Vex.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["Riftwalker", "Mascot"]
+  },
+  {
+    "name": "Vi",
+    "health": 750,
+    "image": "Vi.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["Brawler", "Aegis", "Underground"]
+  },
+  {
+    "name": "Viego",
+    "health": 750,
+    "image": "Viego.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["Heart", "Renegade"]
+  },
+  {
+    "name": "Warwick",
+    "health": 750,
+    "image": "Warwick.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["Admin", "Brawler", "Lasercorp"]
+  },
+  {
+    "name": "Wukong",
+    "health": 750,
+    "image": "WuKong.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["Defender", "Mech"]
+  },
+  {
+    "name": "Yasuo",
+    "health": 750,
+    "image": "Yasuo.png",
+    "armour": 30,
+    "magicResist": 30,
+    "class": ["Duelist", "Lasercorp"]
+  }
+]

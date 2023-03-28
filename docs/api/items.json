@@ -1,0 +1,863 @@
+[
+  {
+    "name": "ADMINEmblemItem",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "ADMINEmblemItem.png"
+  },
+  {
+    "name": "AceEmblemItem",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "AceEmblemItem.png"
+  },
+  {
+    "name": "AegisEmblemItem",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "AegisEmblemItem.png"
+  },
+  {
+    "name": "AnimaSquadEmblemItem",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "AnimaSquadEmblemItem.png"
+  },
+  {
+    "name": "ArchangelsStaff",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "ArchangelsStaff.png"
+  },
+  {
+    "name": "ArchangelsStaffRadiant",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "ArchangelsStaffRadiant.png"
+  },
+  {
+    "name": "BFSword",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "BFSword.png"
+  },
+  {
+    "name": "Bloodthirster",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "Bloodthirster.png"
+  },
+  {
+    "name": "BloodthirsterRadiant",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "BloodthirsterRadiant.png"
+  },
+  {
+    "name": "BlueBuffRadiant",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "BlueBuffRadiant.png"
+  },
+  {
+    "name": "BrambleVest",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "BrambleVest.png"
+  },
+  {
+    "name": "BrambleVestRadiant",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "BrambleVestRadiant.png"
+  },
+  {
+    "name": "BrawlerEmblemItem",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "BrawlerEmblemItem.png"
+  },
+  {
+    "name": "ChainVest",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "ChainVest.png"
+  },
+  {
+    "name": "Chalice",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "Chalice.png"
+  },
+  {
+    "name": "ChaliceOfPowerRadiant",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "ChaliceOfPowerRadiant.png"
+  },
+  {
+    "name": "ChannelerEmblemItem",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "ChannelerEmblemItem.png"
+  },
+  {
+    "name": "CivilianEmblemItem",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "CivilianEmblemItem.png"
+  },
+  {
+    "name": "DeadeyeEmblemItem",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "DeadeyeEmblemItem.png"
+  },
+  {
+    "name": "Deathblade",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "Deathblade.png"
+  },
+  {
+    "name": "DeathbladeRadiant",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "DeathbladeRadiant.png"
+  },
+  {
+    "name": "DefenderEmblemItem",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "DefenderEmblemItem.png"
+  },
+  {
+    "name": "DragonsClaw",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "DragonsClaw.png"
+  },
+  {
+    "name": "DragonsClawRadiant",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "DragonsClawRadiant.png"
+  },
+  {
+    "name": "DuelistEmblemItem",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "DuelistEmblemItem.png"
+  },
+  {
+    "name": "ExoPrimeEmblemItem",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "ExoPrimeEmblemItem.png"
+  },
+  {
+    "name": "FrozenHeart",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "FrozenHeart.png"
+  },
+  {
+    "name": "FrozenHeartRadiant",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "FrozenHeartRadiant.png"
+  },
+  {
+    "name": "GargoyleStoneplate",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "GargoyleStoneplate.png"
+  },
+  {
+    "name": "GargoyleStoneplateRadiant",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "GargoyleStoneplateRadiant.png"
+  },
+  {
+    "name": "GenAE",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "GenAE.png"
+  },
+  {
+    "name": "GenAE",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "GenAE.png"
+  },
+  {
+    "name": "GenAE",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "GenAE.png"
+  },
+  {
+    "name": "GenAE",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "GenAE.png"
+  },
+  {
+    "name": "GenAE",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "GenAE.png"
+  },
+  {
+    "name": "GenAE",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "GenAE.png"
+  },
+  {
+    "name": "GenAE",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "GenAE.png"
+  },
+  {
+    "name": "GenAE",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "GenAE.png"
+  },
+  {
+    "name": "GenAE",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "GenAE.png"
+  },
+  {
+    "name": "GenAEEmblemItem",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "GenAEEmblemItem.png"
+  },
+  {
+    "name": "GiantSlayerRadiant",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "GiantSlayerRadiant.png"
+  },
+  {
+    "name": "GiantsBelt",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "GiantsBelt.png"
+  },
+  {
+    "name": "GuardianAngel",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "GuardianAngel.png"
+  },
+  {
+    "name": "GuardianAngelRadiant",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "GuardianAngelRadiant.png"
+  },
+  {
+    "name": "GuinsoosRageblade",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "GuinsoosRageblade.png"
+  },
+  {
+    "name": "GuinsoosRagebladeRadiant",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "GuinsoosRagebladeRadiant.png"
+  },
+  {
+    "name": "HackerEmblemItem",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "HackerEmblemItem.png"
+  },
+  {
+    "name": "HandOfJusticeRadiant",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "HandOfJusticeRadiant.png"
+  },
+  {
+    "name": "HeartEmblemItem",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "HeartEmblemItem.png"
+  },
+  {
+    "name": "HextechGunblade",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "HextechGunblade.png"
+  },
+  {
+    "name": "HextechGunbladeRadiant",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "HextechGunbladeRadiant.png"
+  },
+  {
+    "name": "InfiniteamEmblemItem",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "InfiniteamEmblemItem.png"
+  },
+  {
+    "name": "InfinityEdge",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "InfinityEdge.png"
+  },
+  {
+    "name": "InfinityEdgeRadiant",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "InfinityEdgeRadiant.png"
+  },
+  {
+    "name": "InterPolarisEmblemItem",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "InterPolarisEmblemItem.png"
+  },
+  {
+    "name": "IonicSpark",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "IonicSpark.png"
+  },
+  {
+    "name": "IonicSparkRadiant",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "IonicSparkRadiant.png"
+  },
+  {
+    "name": "JeweledGauntlet",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "JeweledGauntlet.png"
+  },
+  {
+    "name": "JeweledGauntletRadiant",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "JeweledGauntletRadiant.png"
+  },
+  {
+    "name": "LastWhisper",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "LastWhisper.png"
+  },
+  {
+    "name": "LastWhisperRadiant",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "LastWhisperRadiant.png"
+  },
+  {
+    "name": "LocketOfTheIronSolari",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "LocketOfTheIronSolari.png"
+  },
+  {
+    "name": "LocketOfTheIronSolariRadiant",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "LocketOfTheIronSolariRadiant.png"
+  },
+  {
+    "name": "MadredsBloodrazor",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "MadredsBloodrazor.png"
+  },
+  {
+    "name": "MascotEmblemItem",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "MascotEmblemItem.png"
+  },
+  {
+    "name": "Morellonomicon",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "Morellonomicon.png"
+  },
+  {
+    "name": "MorellonomiconRadiant",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "MorellonomiconRadiant.png"
+  },
+  {
+    "name": "NeedlesslyLargeRod",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "NeedlesslyLargeRod.png"
+  },
+  {
+    "name": "NegatronCloak",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "NegatronCloak.png"
+  },
+  {
+    "name": "OrnnAnimaVisage",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "OrnnAnimaVisage.png"
+  },
+  {
+    "name": "OrnnDeathsDefiance",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "OrnnDeathsDefiance.png"
+  },
+  {
+    "name": "OrnnEternalWinter",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "OrnnEternalWinter.png"
+  },
+  {
+    "name": "OrnnInfinityForce",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "OrnnInfinityForce.png"
+  },
+  {
+    "name": "OrnnMuramana",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "OrnnMuramana.png"
+  },
+  {
+    "name": "OrnnObsidianCleaver",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "OrnnObsidianCleaver.png"
+  },
+  {
+    "name": "OrnnRanduinsSanctum",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "OrnnRanduinsSanctum.png"
+  },
+  {
+    "name": "OrnnRocketPropelledFist",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "OrnnRocketPropelledFist.png"
+  },
+  {
+    "name": "OrnnTheCollector",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "OrnnTheCollector.png"
+  },
+  {
+    "name": "OrnnZhonyasParadox",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "OrnnZhonyasParadox.png"
+  },
+  {
+    "name": "OxForceEmblemItem",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "OxForceEmblemItem.png"
+  },
+  {
+    "name": "PowerGauntlet",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "PowerGauntlet.png"
+  },
+  {
+    "name": "PranksterEmblemItem",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "PranksterEmblemItem.png"
+  },
+  {
+    "name": "Quicksilver",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "Quicksilver.png"
+  },
+  {
+    "name": "QuicksilverRadiant",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "QuicksilverRadiant.png"
+  },
+  {
+    "name": "RabadonsDeathcap",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "RabadonsDeathcap.png"
+  },
+  {
+    "name": "RabadonsDeathcapRadiant",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "RabadonsDeathcapRadiant.png"
+  },
+  {
+    "name": "RapidFireCannon",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "RapidFireCannon.png"
+  },
+  {
+    "name": "RapidFirecannonRadiant",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "RapidFirecannonRadiant.png"
+  },
+  {
+    "name": "RecurveBow",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "RecurveBow.png"
+  },
+  {
+    "name": "RedBuff",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "RedBuff.png"
+  },
+  {
+    "name": "Redemption",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "Redemption.png"
+  },
+  {
+    "name": "RedemptionRadiant",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "RedemptionRadiant.png"
+  },
+  {
+    "name": "RenegadeEmblemItem",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "RenegadeEmblemItem.png"
+  },
+  {
+    "name": "RiftwalkerEmblemItem",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "RiftwalkerEmblemItem.png"
+  },
+  {
+    "name": "RunaansHurricane",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "RunaansHurricane.png"
+  },
+  {
+    "name": "RunaansHurricaneRadiant",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "RunaansHurricaneRadiant.png"
+  },
+  {
+    "name": "SeraphsEmbrace",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "SeraphsEmbrace.png"
+  },
+  {
+    "name": "Shroud",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "Shroud.png"
+  },
+  {
+    "name": "ShroudOfStillnessRadiant",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "ShroudOfStillnessRadiant.png"
+  },
+  {
+    "name": "SparringGloves",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "SparringGloves.png"
+  },
+  {
+    "name": "Spatula",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "Spatula.png"
+  },
+  {
+    "name": "SpearOfShojin",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "SpearOfShojin.png"
+  },
+  {
+    "name": "SpearOfShojinRadiant",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "SpearOfShojinRadiant.png"
+  },
+  {
+    "name": "StarGuardianEmblemItem",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "StarGuardianEmblemItem.png"
+  },
+  {
+    "name": "StatikkShiv",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "StatikkShiv.png"
+  },
+  {
+    "name": "StatikkShivRadiant",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "StatikkShivRadiant.png"
+  },
+  {
+    "name": "SunfireCapeRadiant",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "SunfireCapeRadiant.png"
+  },
+  {
+    "name": "TearOfTheGoddess",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "TearOfTheGoddess.png"
+  },
+  {
+    "name": "ThiefsGloves",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "ThiefsGloves.png"
+  },
+  {
+    "name": "ThiefsGlovesRadiant",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "ThiefsGlovesRadiant.png"
+  },
+  {
+    "name": "TitanicHydra",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "TitanicHydra.png"
+  },
+  {
+    "name": "TitansResolve",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "TitansResolve.png"
+  },
+  {
+    "name": "TitansResolveRadiant",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "TitansResolveRadiant.png"
+  },
+  {
+    "name": "TrapClawRadiant",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "TrapClawRadiant.png"
+  },
+  {
+    "name": "UndergroundTheEmblemItem",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "UndergroundTheEmblemItem.png"
+  },
+  {
+    "name": "UnstableConcoction",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "UnstableConcoction.png"
+  },
+  {
+    "name": "WarmogsArmor",
+    "health": 800,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "WarmogsArmor.png"
+  },
+  {
+    "name": "WarmogsArmorRadiant",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "WarmogsArmorRadiant.png"
+  },
+  {
+    "name": "ZekesHerald",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "ZekesHerald.png"
+  },
+  {
+    "name": "ZekesHeraldRadiant",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "ZekesHeraldRadiant.png"
+  },
+  {
+    "name": "Zephyr",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "Zephyr.png"
+  },
+  {
+    "name": "ZephyrRadiant",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "ZephyrRadiant.png"
+  },
+  {
+    "name": "ZzRotPortalRadiant",
+    "health": 0,
+    "armour": 0,
+    "magicResist": 0,
+    "image": "ZzRotPortalRadiant.png"
+  }
+]
