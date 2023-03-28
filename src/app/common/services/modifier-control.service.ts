@@ -8,7 +8,6 @@ import { ModifierBase } from '../component/modifiers/modifier-base';
 export class ModifierControlService {
   toFormGroup(questions: ModifierBase<string>[] ) {
     const group: any = {};
-    console.log(questions)
     questions.forEach(question => {
       if(question.key == "mech"){
         let mechGroup: any = {};

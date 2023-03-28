@@ -146,7 +146,6 @@ export class CalculatorComponent {
       mech2: this.statModifiers.value.mech2,
       oxforce: this.statModifiers.value.oxforce
     }
-    console.log(modifiers);
 
     this.stats = this.statCalculatorService.calculateStats(this.selectedChampion, this.selectedItems, modifiers);
 

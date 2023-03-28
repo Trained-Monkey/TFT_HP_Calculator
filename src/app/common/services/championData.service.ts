@@ -16,7 +16,7 @@ export class ChampionDataService {
   test = new Subject();
 
   constructor(private http: HttpClient) {
-    this.champion = this.http.get<Champion[]>('/api/champions.json').pipe(
+    this.champion = this.http.get<Champion[]>('api/champions.json').pipe(
       // Replay data onto new subscribers
       shareReplay(1)
     );

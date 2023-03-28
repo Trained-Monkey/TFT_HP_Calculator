@@ -14,7 +14,7 @@ export class ItemDataService {
   filteredItem: Observable<Item[]>;
 
   constructor(private http: HttpClient) {
-    this.item = this.http.get<Item[]>('/api/items.json').pipe(
+    this.item = this.http.get<Item[]>('api/items.json').pipe(
       shareReplay(1)
     );
 

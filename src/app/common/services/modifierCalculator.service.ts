@@ -84,7 +84,6 @@ class Aegis {
   }
 
   checkAegis(champion: Champion, items: Item[]): number{
-    console.log(items);
     if (champion.class.includes(Class.Aegis)) return 1;
     for (var i = 0; i < items.length; i++){
       if (items[i] != null && items[i].name == EmblemItem.Aegis){
@@ -113,7 +112,6 @@ class Brawler {
       return curr;
     }
 
-    console.log(modifiers);
     var brawler: number = modifiers.brawler;
 
     var index = this.checkBrawler(champion, items);
@@ -160,7 +158,6 @@ class Mech {
   }
 
   isMech(champion: Champion, items: Item[]){
-    console.log(champion);
     if (champion.class.includes(Class.Mech)) return 1;
     for (var i = 0; i < items.length; i++){
       if (items[i] != null && items[i].name == EmblemItem.Mech){
@@ -244,7 +241,6 @@ class OxForce{
     var oxforce: number = modifiers.oxforce;
 
     var index = this.checkOxForce(champion, items);
-    console.log(modifiers);
 
     curr.armour += this.oxforceMap.get(oxforce)[index];
     curr.magicResist += this.oxforceMap.get(oxforce)[index];
