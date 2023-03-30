@@ -53,7 +53,7 @@ export class StatCalculatorService {
     if (champ) {
       // Might need special cases here to account for those that gain extra stats
       // when levelling up
-      curr.health += champ.health * Math.pow(1.5, star - 1);
+      curr.health += champ.health * Math.pow(1.8, star - 1);
       curr.armour += champ.armour;
       curr.magicResist += champ.magicResist;
     }

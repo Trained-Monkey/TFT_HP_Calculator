@@ -137,10 +137,11 @@ class Mech {
   mechMap = new Map();
   constructor(){
     this.mechMap.set('', 0);
-    this.mechMap.set('Jax', 1000);
-    this.mechMap.set('Draven', 1000);
-    this.mechMap.set('Wukong', 1000);
-    this.mechMap.set('Leona', 1000);
+    this.mechMap.set('Jax', 800 * 1.8);
+    this.mechMap.set('Draven', 600 * 1.8);
+    this.mechMap.set('Wukong', 650 * 1.8);
+    this.mechMap.set('Garen', 1000 * 1.8);
+    this.mechMap.set('Leona', 1100 * 1.8);
   }
 
   calculateStat(champion: Champion, items: Item[], modifiers: Modifiers, curr: Stats):Stats {
@@ -165,6 +166,7 @@ class Mech {
       }
     }
 
+    return 0;
   }
 }
 

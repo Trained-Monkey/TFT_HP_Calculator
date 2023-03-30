@@ -142,8 +142,8 @@ export class CalculatorComponent {
       ionic: this.statModifiers.value.ionic,
       lastWhisper: this.statModifiers.value.lastWhisper,
       gargoyle: this.statModifiers.value.gargoyle,
-      mech1: this.statModifiers.value.mech1,
-      mech2: this.statModifiers.value.mech2,
+      mech1: this.statModifiers.value.mech != undefined ? this.statModifiers.value.mech.mech1 : undefined,
+      mech2: this.statModifiers.value.mech != undefined ? this.statModifiers.value.mech.mech2 : undefined,
       oxforce: this.statModifiers.value.oxforce
     }
 
