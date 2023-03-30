@@ -42,7 +42,7 @@
   {
     "name": "Belveth",
     "health": 750,
-    "image": "Belveth.png",
+    "image": "BelVeth.png",
     "armour": 30,
     "magicResist": 30,
     "class": ["Threat"]

@@ -48,25 +48,24 @@
   min-width: 180px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
-  max-height:200px;
+  max-height:300px;
+  max-width: 10px;
   overflow:auto;             /* to get scroll */
   margin-top: 63px;
 }
 
 .unitItemOption {
   display: flex;
-  width: 90%;
-  height: 45px;
-  margin: 5px;
+  height: 60px;
   flex-direction: row;
-  text-align: center;
+  vertical-align: middle;
 }
 
 .unitItemOption img {
   border: 1px solid black;
   border-radius: 5px;
-  width: 40px;
-  height: 40px;
+  width: 55px;
+  height: 55px;
 }
 
 .unitItemOption p {
@@ -79,6 +78,11 @@
 
 .unitItem:hover .unitItemContent {
   display: block;
+}
+
+.searchbar {
+  display: flex;
+  width: 95%;
 }
 
 .modifierContainer {
@@ -114,7 +118,6 @@
 
 .modifierForm {
   display: flex;
-  /* background-color: aqua; */
   flex-direction: row;
 }
 
@@ -133,7 +136,6 @@
   display: flex;
   width: 100%;
   height: 50%;
-  background-color: rgb(250, 250, 250);
 }
 
 .graphItem {
@@ -142,19 +144,23 @@
   height: 100%;
 }
 
-
 .statContainer {
   display: flex;
   width: 100%;
   height: 50%;
-  background-color: aliceblue;
 
   flex-wrap: wrap;
+}
+.statRow {
+  display: flex;
+  width: 100%;
+  max-height: 100px;
 }
 
 .statItem {
   display: flex;
   width: 50%;
-  /* max-height: 10%; */
+  min-height: 10%;
+  margin-left: 10px;
 }
 

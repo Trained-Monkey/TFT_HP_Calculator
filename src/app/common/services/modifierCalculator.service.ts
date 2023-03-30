@@ -216,7 +216,7 @@ class Gargoyle {
       }
     }
 
-    let amp = modifiers.gargoyle * count * 18;
+    let amp = modifiers.gargoyle * count * 15;
     curr.armour += amp;
     curr.magicResist += amp;
 

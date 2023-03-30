@@ -5,7 +5,7 @@
         <img [src]="championImagePath">
 
         <div class="unitItemContent">
-          <input type="text" [(ngModel)]="championSearchString" id="myInput" (keyup)="searchChampions()" placeholder="Search for names..">
+          <input class="searchbar" type="text" [(ngModel)]="championSearchString" id="myInput" (keyup)="searchChampions()" placeholder="Search for names..">
 
           <div *ngFor="let c of filteredChampions | async" class="unitItemOption" (click)="selectChampion(c)">
             <img [src]="'assets/images/champions/' + c.image" onerror="this.onerror=null; this.remove();">
@@ -18,7 +18,7 @@
         <img [src]="itemImagePaths[a]">
 
         <div class="unitItemContent">
-          <input type="text" [(ngModel)]="itemSearchString" id="myInput" (keyup)="searchItems()" placeholder="Search for names..">
+          <input class="searchbar" type="text" [(ngModel)]="itemSearchString" id="myInput" (keyup)="searchItems()" placeholder="Search for names..">
 
           <div *ngFor="let i of filteredItems | async" class="unitItemOption" (click)="selectItem(i, a)">
             <img [src]="'assets/images/items/' + i.image" onerror="this.onerror=null; this.remove();">
@@ -37,16 +37,29 @@
       <div echarts [options]="options" [theme]="theme" [merge]="mergeOption" class="graphItem"> </div>
     </div>
     <div class="statContainer" *ngIf="selectedChampion">
-        <div class="statItem">Health: {{stats.health}} </div>
-        <div class="statItem"></div>
-        <div class="statItem">Effective Physical HP: {{PHP}} </div>
-        <div class="statItem">Effective Magical HP: {{MHP}} </div>
-        <div class="statItem">Armour:  {{stats.armour}} </div>
-        <div class="statItem">Magic Resist:  {{stats.magicResist}} </div>
-        <div class="statItem">PHP growth per armour increase: {{PHPGrowthArmour}} </div>
-        <div class="statItem">MHP growth per magic resist increase: {{MHPGrowthMagicResist}}</div>
-        <div class="statItem">PHP growth per health increase: {{PHPGrowthHealth}} </div>
-        <div class="statItem">MHP growth per health increase: {{MHPGrowthHealth}}</div>
+        <div class="statRow">
+          <div class="statItem">Health: {{stats.health}} </div>
+        </div>
+
+        <div class="statRow">
+          <div class="statItem">Effective physical HP: {{PHP}} </div>
+          <div class="statItem">Effective magical HP: {{MHP}} </div>
+        </div>
+
+        <div class="statRow">
+          <div class="statItem">Armour:  {{stats.armour}} </div>
+          <div class="statItem">Magic resist:  {{stats.magicResist}} </div>
+        </div>
+
+        <div class="statRow">
+          <div class="statItem">PHP growth per armour increase: {{PHPGrowthArmour}} </div>
+          <div class="statItem">MHP growth per magic resist increase: {{MHPGrowthMagicResist}}</div>
+        </div>
+
+        <div class="statRow">
+          <div class="statItem">PHP growth per health increase: {{PHPGrowthHealth}} </div>
+          <div class="statItem">MHP growth per health increase: {{MHPGrowthHealth}}</div>
+        </div>
     </div>
   </div>
 </div>

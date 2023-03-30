@@ -53,19 +53,13 @@ export enum Class {
   Mech = "Mech",
   Anima = "Anima",
   OxForce = "OxForce"
-  // Prankster,
-  // Mascot,
-  // Hacker,
-  // Spellslinger,
-  // Renegade
 }
 
 export enum EmblemItem {
-  Anima = "AnimaEmblemItem",
-  Brawler = "BrawlerEmblemItem",
-  Mech = "MechEmblemItem",
-  OxForce = "OxForceEmblemItem",
-  Defender = "DefenderEmblemItem",
-  Aegis = "AegisEmblemItem"
-
+  Anima = "Anima Squad Spat",
+  Brawler = "Brawler Spat",
+  Mech = "Mech Prime Spat",
+  OxForce = "OxForce Spat",
+  Defender = "Defender Spat",
+  Aegis = "Aegis Spat"
 }
